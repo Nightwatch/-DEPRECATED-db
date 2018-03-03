@@ -10,8 +10,8 @@ export class UserVerification {
   @Column()
   verified: boolean
 
-  @Column()
-  verificationToken?: string
+  @Column({ nullable: true })
+  verificationToken: string | null
 
   @OneToOne(type => User, user => user.verification)
   @JoinColumn()

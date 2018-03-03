@@ -4,7 +4,6 @@ import { UserSettings, UserVerification, UserLevel } from '.'
 
 @Entity()
 export class User {
-
   @PrimaryColumn()
   id: string
 
@@ -22,7 +21,7 @@ export class User {
   banned: boolean
 
   @Column()
-  dateLastMessage: Date
+  dateLastMessage?: Date
 
   @OneToOne(type => UserSettings, userSettings => userSettings.user, {
     cascadeAll: true
@@ -38,4 +37,9 @@ export class User {
     cascadeAll: true
   })
   level: UserLevel
+
+  constructor () {
+    this.dateCreated = new Date()
+    this.banned = false
+  }
 }

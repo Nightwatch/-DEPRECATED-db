@@ -16,4 +16,9 @@ export class UserLevel {
   @OneToOne(type => User, user => user.level)
   @JoinColumn()
   user: User
+
+  constructor () {
+    this.xp = 0
+    this.level = 0
+  }
 }

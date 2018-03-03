@@ -11,9 +11,13 @@ export class UserVerification {
   verified: boolean
 
   @Column()
-  verificationToken: string
+  verificationToken?: string
 
   @OneToOne(type => User, user => user.verification)
   @JoinColumn()
   user: User
+
+  constructor () {
+    this.verified = false
+  }
 }

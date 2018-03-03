@@ -16,4 +16,9 @@ export class UserSettings {
   @OneToOne(type => User, user => user.settings)
   @JoinColumn()
   user: User
+
+  constructor () {
+    this.levelsEnabled = true
+    this.directMessagesEnabled = true
+  }
 }

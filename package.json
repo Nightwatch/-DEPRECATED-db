@@ -2,8 +2,7 @@
   "name": "@natsuki/db",
   "version": "0.0.1",
   "description": "Database package for the Natsuki API",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

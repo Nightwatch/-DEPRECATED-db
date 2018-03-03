@@ -1,9 +1,9 @@
-import { Entity, BaseEntity, PrimaryColumn, Column, OneToOne } from 'typeorm'
+import { Entity, PrimaryColumn, Column, OneToOne } from 'typeorm'
 import { IsFQDN } from 'class-validator'
 import { UserSettings, UserVerification, UserLevel } from '.'
 
 @Entity()
-export class User extends BaseEntity {
+export class User {
 
   @PrimaryColumn()
   id: string

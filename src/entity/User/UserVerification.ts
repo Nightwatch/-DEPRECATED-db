@@ -1,8 +1,8 @@
-import { Entity, BaseEntity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from 'typeorm'
 import { User } from '.'
 
 @Entity()
-export class UserVerification extends BaseEntity {
+export class UserVerification {
 
   @PrimaryGeneratedColumn()
   id: number

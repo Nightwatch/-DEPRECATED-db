@@ -21,7 +21,7 @@ export class User {
   banned: boolean
 
   @Column({ nullable: true })
-  dateLastMessage: Date | null
+  dateLastMessage: Date
 
   @OneToOne(type => UserSettings, userSettings => userSettings.user, {
     cascadeAll: true

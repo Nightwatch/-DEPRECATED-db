@@ -1,19 +1,18 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn, Index } from 'typeorm'
 import { User } from '.'
 
 @Entity()
 export class UserVerification {
-  @OneToOne(type => User, user => user.verification, {
-    primary: true
-  })
-  @JoinColumn()
-  user: User
-
   @Column()
   verified: boolean
 
-  @Column({ nullable: true })
+  @Column('varchar', { nullable: true })
   verificationToken: string
+
+  @Index({ unique: true })
+  @OneToOne(type => User, user => user.verification)
+  @JoinColumn()
+  user: User
 
   constructor () {
     this.verified = false

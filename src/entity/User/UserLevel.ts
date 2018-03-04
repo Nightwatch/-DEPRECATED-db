@@ -3,17 +3,16 @@ import { User } from '.'
 
 @Entity()
 export class UserLevel {
-  @OneToOne(type => User, user => user.level, {
-    primary: true
-  })
-  @JoinColumn()
-  user: User
-
   @Column()
   xp: number
 
   @Column()
   level: number
+
+  @Index({ unique: true })
+  @OneToOne(type => User, user => user.level)
+  @JoinColumn()
+  user: User
 
   constructor () {
     this.xp = 0

@@ -7,20 +7,20 @@ export class User {
   @PrimaryColumn()
   id: string
 
-  @Column()
+  @Column('varchar', { length: 100 })
   name: string
 
-  @Column()
+  @Column('varchar')
   @IsFQDN()
   avatarUrl: string
 
-  @Column()
+  @Column('datetime')
   dateCreated: Date
 
-  @Column()
+  @Column('boolean')
   banned: boolean
 
-  @Column({ nullable: true })
+  @Column('datetime', { nullable: true })
   dateLastMessage: Date
 
   @OneToOne(type => UserSettings, userSettings => userSettings.user, {

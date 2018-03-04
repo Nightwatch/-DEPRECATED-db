@@ -24,17 +24,20 @@ export class User {
   dateLastMessage: Date
 
   @OneToOne(type => UserSettings, userSettings => userSettings.user, {
-    cascadeAll: true
+    cascadeRemove: true,
+    cascadeInsert: true
   })
   settings: UserSettings
 
   @OneToOne(type => UserVerification, userVerification => userVerification.user, {
-    cascadeAll: true
+    cascadeRemove: true,
+    cascadeInsert: true
   })
   verification: UserVerification
 
   @OneToOne(type => UserLevel, userLevel => userLevel.user, {
-    cascadeAll: true
+    cascadeRemove: true,
+    cascadeInsert: true
   })
   level: UserLevel
 

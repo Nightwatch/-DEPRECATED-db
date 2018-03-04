@@ -3,19 +3,17 @@ import { User } from '.'
 
 @Entity()
 export class UserVerification {
-
-  @PrimaryGeneratedColumn()
-  id: number
+  @OneToOne(type => User, user => user.verification, {
+    primary: true
+  })
+  @JoinColumn()
+  user: User
 
   @Column()
   verified: boolean
 
   @Column({ nullable: true })
   verificationToken: string
-
-  @OneToOne(type => User, user => user.verification)
-  @JoinColumn()
-  user: User
 
   constructor () {
     this.verified = false

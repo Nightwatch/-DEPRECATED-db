@@ -3,19 +3,17 @@ import { User } from '.'
 
 @Entity()
 export class UserSettings {
-
-  @PrimaryGeneratedColumn()
-  id: number
+  @OneToOne(type => User, user => user.settings, {
+    primary: true
+  })
+  @JoinColumn()
+  user: User
 
   @Column()
   levelsEnabled: boolean
 
   @Column()
   directMessagesEnabled: boolean
-
-  @OneToOne(type => User, user => user.settings)
-  @JoinColumn()
-  user: User
 
   constructor () {
     this.levelsEnabled = true

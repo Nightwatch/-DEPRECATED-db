@@ -3,6 +3,10 @@ import { User } from '.'
 
 @Entity()
 export class UserLevel {
+
+  @PrimaryGeneratedColumn()
+  id: number
+
   @Column()
   xp: number
 

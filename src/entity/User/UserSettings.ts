@@ -3,6 +3,10 @@ import { User } from '.'
 
 @Entity()
 export class UserSettings {
+
+  @PrimaryGeneratedColumn()
+  id: number
+
   @Column()
   levelsEnabled: boolean
 

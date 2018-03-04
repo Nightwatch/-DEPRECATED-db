@@ -3,6 +3,10 @@ import { User } from '.'
 
 @Entity()
 export class UserVerification {
+
+  @PrimaryGeneratedColumn()
+  id: number
+
   @Column()
   verified: boolean
 

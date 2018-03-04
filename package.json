@@ -21,7 +21,7 @@
     "class-validator": "^0.8.1",
     "pg": "^7.4.1",
     "reflect-metadata": "^0.1.12",
-    "typeorm": "^0.1.12"
+    "typeorm": "^0.2.0-alpha.25"
   },
   "devDependencies": {
     "@types/chai": "^4.1.2",

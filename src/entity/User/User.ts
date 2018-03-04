@@ -14,13 +14,13 @@ export class User {
   @IsFQDN()
   avatarUrl: string
 
-  @Column('datetime')
+  @Column()
   dateCreated: Date
 
-  @Column('boolean')
+  @Column()
   banned: boolean
 
-  @Column('datetime', { nullable: true })
+  @Column({ nullable: true })
   dateLastMessage: Date
 
   @OneToOne(type => UserSettings, userSettings => userSettings.user, {

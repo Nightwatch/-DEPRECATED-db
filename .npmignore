@@ -1,5 +1,6 @@
 src/
 !dist/
 .git/
+*.json
 !node_modules/
 !package.json

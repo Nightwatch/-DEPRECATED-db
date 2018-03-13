@@ -399,4 +399,3 @@ __pycache__/
 
 */config.json
 *.code-workspace
-dist/

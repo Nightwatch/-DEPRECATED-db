@@ -13,13 +13,6 @@ const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
 const _1 = require(".");
 let User = class User {
-    constructor() {
-        this.dateCreated = new Date();
-        this.banned = false;
-        this.level = new _1.UserLevel();
-        this.settings = new _1.UserSettings();
-        this.verification = new _1.UserVerification();
-    }
 };
 __decorate([
     typeorm_1.PrimaryColumn(),
@@ -68,8 +61,7 @@ __decorate([
     __metadata("design:type", _1.UserLevel)
 ], User.prototype, "level", void 0);
 User = __decorate([
-    typeorm_1.Entity(),
-    __metadata("design:paramtypes", [])
+    typeorm_1.Entity()
 ], User);
 exports.User = User;
 //# sourceMappingURL=User.js.map

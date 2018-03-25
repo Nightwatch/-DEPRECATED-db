@@ -18,11 +18,12 @@ export class Guild {
   })
   settings: GuildSettings
 
-  @OneToMany(type => GuildRole, guildRole => guildRole.guild)
+  @OneToMany(type => GuildRole, guildRole => guildRole.guild, {
+    cascadeInsert: true
+  })
   roles: GuildRole[]
 
   constructor () {
     this.dateCreated = new Date()
-    this.settings = new GuildSettings()
   }
 }

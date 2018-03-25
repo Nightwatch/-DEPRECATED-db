@@ -14,7 +14,6 @@ const _1 = require(".");
 let Guild = class Guild {
     constructor() {
         this.dateCreated = new Date();
-        this.settings = new _1.GuildSettings();
     }
 };
 __decorate([
@@ -37,7 +36,9 @@ __decorate([
     __metadata("design:type", _1.GuildSettings)
 ], Guild.prototype, "settings", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => _1.GuildRole, guildRole => guildRole.guild),
+    typeorm_1.OneToMany(type => _1.GuildRole, guildRole => guildRole.guild, {
+        cascadeInsert: true
+    }),
     __metadata("design:type", Array)
 ], Guild.prototype, "roles", void 0);
 Guild = __decorate([

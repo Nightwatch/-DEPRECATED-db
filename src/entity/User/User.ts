@@ -40,12 +40,4 @@ export class User {
     cascadeInsert: true
   })
   level: UserLevel
-
-  constructor () {
-    this.dateCreated = new Date()
-    this.banned = false
-    this.level = new UserLevel()
-    this.settings = new UserSettings()
-    this.verification = new UserVerification()
-  }
 }

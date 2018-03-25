@@ -38,7 +38,10 @@ __decorate([
     )
 ], Referral.prototype, "dateCreated", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => __1.ReferralRole, referralRole => referralRole.referral),
+    typeorm_1.OneToOne(type => __1.ReferralRole, referralRole => referralRole.referral, {
+        cascadeInsert: true,
+        cascadeRemove: true
+    }),
     __metadata("design:type", __1.ReferralRole
     /**
      * User that created the referral. They will be known as the referral owner.
@@ -64,7 +67,9 @@ __decorate([
     __metadata("design:type", __1.Guild)
 ], Referral.prototype, "guild", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => __1.ReferralUnlockedReward, unlockedReward => unlockedReward.referral),
+    typeorm_1.OneToMany(type => __1.ReferralUnlockedReward, unlockedReward => unlockedReward.referral, {
+        cascadeInsert: true
+    }),
     __metadata("design:type", Array)
 ], Referral.prototype, "unlockedRewards", void 0);
 Referral = __decorate([

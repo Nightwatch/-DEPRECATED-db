@@ -16,13 +16,13 @@ Feel free to suggest new entities/columns, or even create a Pull Request to add 
 
 ## Installation
 ```sh
-$  npm i -s natsuki-db
+$  npm i -s NatsukiBot/db
 ```
 
 ## Usage
 First we need to import the module.
 ```javascript
-import { connect, Connection } from 'natsuki-db'
+import { connect, Connection } from '@natsuki/db'
 ```
 
 At the basic level, we need to connect to the database, so we import the `connect` method. The connect method returns a Promise of type `Connection` so we can import that also.

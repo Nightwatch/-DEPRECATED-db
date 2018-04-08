@@ -15,6 +15,7 @@ let UserLevel = class UserLevel {
     constructor() {
         this.xp = 0;
         this.level = 0;
+        this.timestamp = new Date();
     }
 };
 __decorate([
@@ -29,6 +30,10 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Number)
 ], UserLevel.prototype, "level", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", Date)
+], UserLevel.prototype, "timestamp", void 0);
 __decorate([
     typeorm_1.Index({ unique: true }),
     typeorm_1.OneToOne(type => _1.User, user => user.level),

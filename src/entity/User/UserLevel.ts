@@ -13,6 +13,9 @@ export class UserLevel {
   @Column()
   level: number
 
+  @Column()
+  timestamp: Date
+
   @Index({ unique: true })
   @OneToOne(type => User, user => user.level)
   @JoinColumn()
@@ -21,5 +24,6 @@ export class UserLevel {
   constructor () {
     this.xp = 0
     this.level = 0
+    this.timestamp = new Date()
   }
 }

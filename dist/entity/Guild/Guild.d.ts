@@ -5,5 +5,5 @@ export declare class Guild {
     dateCreated: Date;
     settings: GuildSettings;
     roles: GuildRole[];
-    constructor();
+    constructor(guild?: Guild);
 }

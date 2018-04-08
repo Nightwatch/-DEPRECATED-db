@@ -23,7 +23,10 @@ export class Guild {
   })
   roles: GuildRole[]
 
-  constructor () {
+  constructor (guild?: Guild) {
+    if (guild) {
+      Object.assign(this, guild)
+    }
     this.dateCreated = new Date()
   }
 }

@@ -68,7 +68,11 @@ export class Referral {
   })
   unlockedRewards: ReferralUnlockedReward[]
 
-  constructor () {
+  constructor (referral?: Referral) {
+    if (referral) {
+      Object.assign(this, referral)
+    }
+
     this.dateCreated = new Date()
   }
 }

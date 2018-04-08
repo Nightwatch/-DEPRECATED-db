@@ -13,7 +13,10 @@ const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
 const __1 = require("..");
 let Referral = class Referral {
-    constructor() {
+    constructor(referral) {
+        if (referral) {
+            Object.assign(this, referral);
+        }
         this.dateCreated = new Date();
     }
 };
@@ -74,7 +77,7 @@ __decorate([
 ], Referral.prototype, "unlockedRewards", void 0);
 Referral = __decorate([
     typeorm_1.Entity(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [Referral])
 ], Referral);
 exports.Referral = Referral;
 //# sourceMappingURL=Referral.js.map

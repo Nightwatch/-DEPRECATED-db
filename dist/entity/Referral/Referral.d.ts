@@ -43,5 +43,5 @@ export declare class Referral {
      */
     guild: Guild;
     unlockedRewards: ReferralUnlockedReward[];
-    constructor();
+    constructor(referral?: Referral);
 }

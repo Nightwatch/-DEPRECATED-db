@@ -13,6 +13,11 @@ const typeorm_1 = require("typeorm");
 const class_validator_1 = require("class-validator");
 const _1 = require(".");
 let User = class User {
+    constructor(user) {
+        if (user) {
+            Object.assign(this, user);
+        }
+    }
 };
 __decorate([
     typeorm_1.PrimaryColumn(),
@@ -61,7 +66,8 @@ __decorate([
     __metadata("design:type", _1.UserLevel)
 ], User.prototype, "level", void 0);
 User = __decorate([
-    typeorm_1.Entity()
+    typeorm_1.Entity(),
+    __metadata("design:paramtypes", [User])
 ], User);
 exports.User = User;
 //# sourceMappingURL=User.js.map

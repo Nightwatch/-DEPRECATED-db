@@ -9,4 +9,5 @@ export declare class User {
     settings: UserSettings;
     verification: UserVerification;
     level: UserLevel;
+    constructor(user?: User);
 }

@@ -12,7 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const _1 = require(".");
 let Guild = class Guild {
-    constructor() {
+    constructor(guild) {
+        if (guild) {
+            Object.assign(this, guild);
+        }
         this.dateCreated = new Date();
     }
 };
@@ -43,7 +46,7 @@ __decorate([
 ], Guild.prototype, "roles", void 0);
 Guild = __decorate([
     typeorm_1.Entity(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [Guild])
 ], Guild);
 exports.Guild = Guild;
 //# sourceMappingURL=Guild.js.map

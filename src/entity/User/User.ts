@@ -40,4 +40,10 @@ export class User {
     cascadeInsert: true
   })
   level: UserLevel
+
+  constructor (user?: User) {
+    if (user) {
+      Object.assign(this, user)
+    }
+  }
 }

@@ -8,4 +8,5 @@ __export(require("./UserSettings"));
 __export(require("./UserVerification"));
 __export(require("./UserLevel"));
 __export(require("./UserReferral"));
+__export(require("./UserBalance"));
 //# sourceMappingURL=index.js.map

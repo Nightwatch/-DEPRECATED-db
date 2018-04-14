@@ -1,4 +1,4 @@
-import { UserSettings, UserVerification, UserLevel } from '.';
+import { UserSettings, UserVerification, UserLevel, UserBalance } from '.';
 export declare class User {
     id: string;
     name: string;
@@ -9,5 +9,6 @@ export declare class User {
     settings: UserSettings;
     verification: UserVerification;
     level: UserLevel;
+    balance: UserBalance;
     constructor(user?: User);
 }

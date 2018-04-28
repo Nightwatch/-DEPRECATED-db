@@ -13,7 +13,7 @@ const typeorm_1 = require("typeorm");
 const _1 = require(".");
 let UserBalance = class UserBalance {
     constructor() {
-        this.netWorth = 0;
+        this.netWorth = 100;
         this.balance = 100;
         this.dateLastClaimedDailies = new Date();
     }

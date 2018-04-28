@@ -22,7 +22,7 @@ export class UserBalance {
   user: User
 
   constructor () {
-    this.netWorth = 0
+    this.netWorth = 100
     this.balance = 100
     this.dateLastClaimedDailies = new Date()
   }

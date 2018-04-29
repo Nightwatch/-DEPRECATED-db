@@ -27,10 +27,11 @@ __decorate([
     typeorm_1.Index({ unique: true }),
     typeorm_1.OneToOne(type => __1.GuildRole),
     typeorm_1.JoinColumn(),
-    __metadata("design:type", __1.GuildRole)
+    __metadata("design:type", typeof (_a = typeof __1.GuildRole !== "undefined" && __1.GuildRole) === "function" && _a || Object)
 ], ReferralRole.prototype, "role", void 0);
 ReferralRole = __decorate([
     typeorm_1.Entity()
 ], ReferralRole);
 exports.ReferralRole = ReferralRole;
+var _a;
 //# sourceMappingURL=ReferralRole.js.map

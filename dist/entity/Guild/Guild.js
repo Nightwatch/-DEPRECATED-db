@@ -39,11 +39,9 @@ __decorate([
     __metadata("design:type", _1.GuildSettings)
 ], Guild.prototype, "settings", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => _1.GuildRole, guildRole => guildRole.guild, {
-        cascadeInsert: true
-    }),
+    typeorm_1.OneToMany(type => _1.GuildSuggestion, guildSuggestion => guildSuggestion.guild),
     __metadata("design:type", Array)
-], Guild.prototype, "roles", void 0);
+], Guild.prototype, "suggestions", void 0);
 Guild = __decorate([
     typeorm_1.Entity(),
     __metadata("design:paramtypes", [Guild])

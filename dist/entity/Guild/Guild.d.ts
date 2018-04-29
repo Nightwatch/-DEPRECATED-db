@@ -1,9 +1,9 @@
-import { GuildSettings, GuildRole } from '.';
+import { GuildSettings, GuildSuggestion } from '.';
 export declare class Guild {
     id: string;
     name: string;
     dateCreated: Date;
     settings: GuildSettings;
-    roles: GuildRole[];
+    suggestions: GuildSuggestion[];
     constructor(guild?: Guild);
 }

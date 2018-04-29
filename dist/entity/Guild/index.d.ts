@@ -1,3 +1,3 @@
 export * from './Guild';
 export * from './GuildSettings';
-export * from './GuildRole';
+export * from './GuildSuggestion';

@@ -1,5 +1,5 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
-import { GuildSettings, GuildRole } from '.'
+import { GuildSettings, GuildSuggestion } from '.'
 
 @Entity()
 export class Guild {
@@ -18,10 +18,8 @@ export class Guild {
   })
   settings: GuildSettings
 
-  @OneToMany(type => GuildRole, guildRole => guildRole.guild, {
-    cascadeInsert: true
-  })
-  roles: GuildRole[]
+  @OneToMany(type => GuildSuggestion, guildSuggestion => guildSuggestion.guild)
+  suggestions: GuildSuggestion[]
 
   constructor (guild?: Guild) {
     if (guild) {

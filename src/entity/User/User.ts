@@ -10,7 +10,7 @@ export class User {
   @Column('varchar', { length: 100 })
   name: string
 
-  @Column('varchar')
+  @Column('varchar', { nullable: true })
   @IsFQDN()
   avatarUrl: string
 

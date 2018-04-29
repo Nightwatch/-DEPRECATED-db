@@ -28,7 +28,7 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column('varchar'),
+    typeorm_1.Column('varchar', { nullable: true }),
     class_validator_1.IsFQDN(),
     __metadata("design:type", String)
 ], User.prototype, "avatarUrl", void 0);

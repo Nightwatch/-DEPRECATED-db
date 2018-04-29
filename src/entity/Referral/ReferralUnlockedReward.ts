@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm'
-import { GuildRole, Referral, ReferralReward } from '..'
+import { Referral, ReferralReward } from '..'
 
 @Entity()
 export class ReferralUnlockedReward {

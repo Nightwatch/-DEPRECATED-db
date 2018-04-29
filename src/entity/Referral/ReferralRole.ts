@@ -1,5 +1,5 @@
 import { Entity, Column, OneToOne, JoinColumn, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
-import { GuildRole, Referral } from '..'
+import { Referral } from '..'
 
 @Entity()
 export class ReferralRole {
@@ -13,7 +13,6 @@ export class ReferralRole {
   referral: Referral
 
   @Index({ unique: true })
-  @OneToOne(type => GuildRole)
-  @JoinColumn()
-  role: GuildRole
+  @Column('varchar')
+  roleId: string
 }

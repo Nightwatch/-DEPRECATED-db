@@ -1,6 +1,6 @@
-import { GuildRole, Referral } from '..';
+import { Referral } from '..';
 export declare class ReferralRole {
     id: number;
     referral: Referral;
-    role: GuildRole;
+    roleId: string;
 }

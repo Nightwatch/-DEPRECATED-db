@@ -9,7 +9,7 @@ The purpose of the database being its own module, is to make the parent bot more
 Feel free to suggest new entities/columns, or even create a Pull Request to add your own changes. If I like it, I may even implement it into the Natsuki bot.
 
 ## Prerequisites
- - Node.js > 7.0.0, Recommended > 8.0.0.
+ - Node.js >= 8.9.0.
  - PostgreSQL > 9.0.
  - A Discord bot running on Discord.js.
  - (optional [for now]) Redis. Will be used in a future update.
@@ -57,42 +57,3 @@ const connection: Connection = await connect(options)
 All methods in the module return a promise.
 
 The module itself does not handle any exceptions, it simply executes something and immediately returns the result. You will have to handle the exceptions on your end.
-
-## Tables
-There are several tables in the database. NatsukiDB uses a relational database, PostgreSQL, allowing the database to be composed of several small tables for the fastest queries.
-
-### User
-
-Global information about the user.
-
-#### UserBalance
-
-User's credit balance and net worth.
-
-#### UserLevel
-
-User's level and XP.
-
-#### UserProfile
-
-User's profile settings.
-
-#### UserGuild
-
-User's information about the guilds they are in.
-
-#### UserReputation
-
-User's reputation, given from other members.
-
-#### UserWarning
-
-User's warning logs from all servers they received a warning.
-
-#### UserKick
-
-User's kick logs from all servers they were kicked from.
-
-#### UserBan
-
-User's ban logs from all servers they were banned from.

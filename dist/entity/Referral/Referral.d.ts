@@ -15,6 +15,13 @@ export declare class Referral {
      */
     inviteUrl: string;
     /**
+     * Number of times people joined using the referral link.
+     *
+     * @type {number}
+     * @memberof Referral
+     */
+    joinCount: number;
+    /**
      * The date the referral was created.
      *
      * @type {Date}
@@ -27,7 +34,7 @@ export declare class Referral {
      * @type {ReferralRole}
      * @memberof Referral
      */
-    referralRole: ReferralRole;
+    role: ReferralRole;
     /**
      * User that created the referral. They will be known as the referral owner.
      *

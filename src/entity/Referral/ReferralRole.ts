@@ -7,8 +7,11 @@ export class ReferralRole {
   @PrimaryGeneratedColumn()
   id: number
 
+  @Column()
+  members: number
+
   @Index({ unique: true })
-  @OneToOne(type => Referral, referral => referral.referralRole)
+  @OneToOne(type => Referral, referral => referral.role)
   @JoinColumn()
   referral: Referral
 

@@ -31,6 +31,10 @@ __decorate([
 ], Referral.prototype, "inviteUrl", void 0);
 __decorate([
     typeorm_1.Column(),
+    __metadata("design:type", Number)
+], Referral.prototype, "joinCount", void 0);
+__decorate([
+    typeorm_1.Column(),
     __metadata("design:type", Date
     /**
      * The role that is given to each user that joins via the referral link.
@@ -53,7 +57,7 @@ __decorate([
      * @memberof Referral
      */
     )
-], Referral.prototype, "referralRole", void 0);
+], Referral.prototype, "role", void 0);
 __decorate([
     typeorm_1.ManyToOne(type => __1.User),
     __metadata("design:type", __1.User

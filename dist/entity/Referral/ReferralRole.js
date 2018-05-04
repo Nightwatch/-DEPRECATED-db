@@ -18,8 +18,12 @@ __decorate([
     __metadata("design:type", Number)
 ], ReferralRole.prototype, "id", void 0);
 __decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", Number)
+], ReferralRole.prototype, "members", void 0);
+__decorate([
     typeorm_1.Index({ unique: true }),
-    typeorm_1.OneToOne(type => __1.Referral, referral => referral.referralRole),
+    typeorm_1.OneToOne(type => __1.Referral, referral => referral.role),
     typeorm_1.JoinColumn(),
     __metadata("design:type", __1.Referral)
 ], ReferralRole.prototype, "referral", void 0);

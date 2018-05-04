@@ -25,6 +25,15 @@ export class Referral {
   inviteUrl: string
 
   /**
+   * Number of times people joined using the referral link.
+   *
+   * @type {number}
+   * @memberof Referral
+   */
+  @Column()
+  joinCount: number
+
+  /**
    * The date the referral was created.
    *
    * @type {Date}
@@ -43,7 +52,7 @@ export class Referral {
     cascadeInsert: true,
     cascadeRemove: true
   })
-  referralRole: ReferralRole
+  role: ReferralRole
 
   /**
    * User that created the referral. They will be known as the referral owner.

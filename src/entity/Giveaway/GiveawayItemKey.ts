@@ -11,7 +11,7 @@ export class GiveawayItemKey {
   key: string
 
   @Index({ unique: true })
-  @OneToOne(type => GiveawayItem, item => item.key)
+  @OneToOne(type => GiveawayItem, item => item.giveaway)
   @JoinColumn()
   giveawayItem: GiveawayItem
 

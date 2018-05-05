@@ -23,7 +23,7 @@ __decorate([
 ], GiveawayItemKey.prototype, "key", void 0);
 __decorate([
     typeorm_1.Index({ unique: true }),
-    typeorm_1.OneToOne(type => _1.GiveawayItem, item => item.key),
+    typeorm_1.OneToOne(type => _1.GiveawayItem, item => item.giveaway),
     typeorm_1.JoinColumn(),
     __metadata("design:type", _1.GiveawayItem)
 ], GiveawayItemKey.prototype, "giveawayItem", void 0);

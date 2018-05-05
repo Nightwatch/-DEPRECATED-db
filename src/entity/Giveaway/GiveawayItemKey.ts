@@ -7,10 +7,10 @@ export class GiveawayItemKey {
   @PrimaryGeneratedColumn()
   id: number
 
+  @Index({ unique: true })
   @Column('varchar')
   key: string
 
-  @Index({ unique: true })
   @OneToOne(type => GiveawayItem, item => item.giveaway)
   @JoinColumn()
   giveawayItem: GiveawayItem

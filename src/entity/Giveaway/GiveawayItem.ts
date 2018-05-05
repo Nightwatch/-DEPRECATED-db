@@ -16,7 +16,6 @@ export class GiveawayItem {
   @IsFQDN()
   url: string
 
-  @Index({ unique: true })
   @OneToOne(type => GiveawayItemKey, key => key.giveawayItem, {
     cascadeInsert: true,
     cascadeRemove: true

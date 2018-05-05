@@ -18,11 +18,11 @@ __decorate([
     __metadata("design:type", Number)
 ], GiveawayItemKey.prototype, "id", void 0);
 __decorate([
+    typeorm_1.Index({ unique: true }),
     typeorm_1.Column('varchar'),
     __metadata("design:type", String)
 ], GiveawayItemKey.prototype, "key", void 0);
 __decorate([
-    typeorm_1.Index({ unique: true }),
     typeorm_1.OneToOne(type => _1.GiveawayItem, item => item.giveaway),
     typeorm_1.JoinColumn(),
     __metadata("design:type", _1.GiveawayItem)

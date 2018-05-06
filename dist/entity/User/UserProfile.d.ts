@@ -5,4 +5,5 @@ export declare class UserProfile {
     bio: string;
     background: string;
     user: User;
+    constructor();
 }

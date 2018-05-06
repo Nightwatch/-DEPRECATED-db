@@ -12,6 +12,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const _1 = require(".");
 let UserProfile = class UserProfile {
+    constructor() {
+        this.title = '';
+        this.bio = '';
+        this.background = 'default';
+    }
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
@@ -36,7 +41,8 @@ __decorate([
     __metadata("design:type", _1.User)
 ], UserProfile.prototype, "user", void 0);
 UserProfile = __decorate([
-    typeorm_1.Entity()
+    typeorm_1.Entity(),
+    __metadata("design:paramtypes", [])
 ], UserProfile);
 exports.UserProfile = UserProfile;
 //# sourceMappingURL=UserProfile.js.map

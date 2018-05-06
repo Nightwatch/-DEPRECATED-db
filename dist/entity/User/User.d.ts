@@ -5,7 +5,7 @@ export declare class User {
     avatarUrl: string;
     dateCreated: Date;
     banned: boolean;
-    dateLastMessage: Date;
+    dateLastMessage: Date | null;
     settings: UserSettings;
     verification: UserVerification;
     level: UserLevel;

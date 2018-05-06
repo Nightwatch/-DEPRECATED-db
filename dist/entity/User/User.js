@@ -42,7 +42,7 @@ __decorate([
 ], User.prototype, "banned", void 0);
 __decorate([
     typeorm_1.Column({ nullable: true }),
-    __metadata("design:type", Date)
+    __metadata("design:type", Object)
 ], User.prototype, "dateLastMessage", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.UserSettings, userSettings => userSettings.user, {

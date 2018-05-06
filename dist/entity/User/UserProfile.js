@@ -30,7 +30,9 @@ __decorate([
     __metadata("design:type", String)
 ], UserProfile.prototype, "background", void 0);
 __decorate([
+    typeorm_1.Index({ unique: true }),
     typeorm_1.OneToOne(type => _1.User, user => user.profile),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", _1.User)
 ], UserProfile.prototype, "user", void 0);
 UserProfile = __decorate([

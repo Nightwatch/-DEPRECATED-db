@@ -1,6 +1,6 @@
 {
   "name": "@natsuki/db",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Database package for the Natsuki API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,7 +21,7 @@
     "class-validator": "^0.8.1",
     "pg": "^7.4.1",
     "reflect-metadata": "^0.1.12",
-    "typeorm": "^0.1.14"
+    "typeorm": "^0.2.5"
   },
   "devDependencies": {
     "@types/chai": "^4.1.2",

@@ -30,8 +30,7 @@ __decorate([
 ], GiveawayItem.prototype, "url", void 0);
 __decorate([
     typeorm_1.OneToOne(type => GiveawayItemKey_1.GiveawayItemKey, key => key.giveawayItem, {
-        cascadeInsert: true,
-        cascadeRemove: true
+        cascade: true
     }),
     __metadata("design:type", GiveawayItemKey_1.GiveawayItemKey)
 ], GiveawayItem.prototype, "key", void 0);

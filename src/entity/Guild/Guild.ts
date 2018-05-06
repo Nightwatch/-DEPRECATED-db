@@ -13,8 +13,7 @@ export class Guild {
   dateCreated: Date
 
   @OneToOne(type => GuildSettings, guildSettings => guildSettings.guild, {
-    cascadeRemove: true,
-    cascadeInsert: true
+    cascade: true
   })
   settings: GuildSettings
 

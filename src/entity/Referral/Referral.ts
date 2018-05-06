@@ -49,8 +49,7 @@ export class Referral {
    * @memberof Referral
    */
   @OneToOne(type => ReferralRole, referralRole => referralRole.referral, {
-    cascadeInsert: true,
-    cascadeRemove: true
+    cascade: true
   })
   role: ReferralRole
 
@@ -73,7 +72,7 @@ export class Referral {
   guild: Guild
 
   @OneToMany(type => ReferralUnlockedReward, unlockedReward => unlockedReward.referral, {
-    cascadeInsert: true
+    cascade: true
   })
   unlockedRewards: ReferralUnlockedReward[]
 

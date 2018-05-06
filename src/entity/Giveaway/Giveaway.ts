@@ -27,7 +27,7 @@ export class Giveaway {
   guild: Guild | null
 
   @OneToMany(type => GiveawayItem, item => item.giveaway, {
-    cascadeInsert: true
+    cascade: true
   })
   items: GiveawayItem[]
 

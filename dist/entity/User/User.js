@@ -46,36 +46,31 @@ __decorate([
 ], User.prototype, "dateLastMessage", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.UserSettings, userSettings => userSettings.user, {
-        cascadeRemove: true,
-        cascadeInsert: true
+        cascade: true
     }),
     __metadata("design:type", _1.UserSettings)
 ], User.prototype, "settings", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.UserVerification, userVerification => userVerification.user, {
-        cascadeRemove: true,
-        cascadeInsert: true
+        cascade: true
     }),
     __metadata("design:type", _1.UserVerification)
 ], User.prototype, "verification", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.UserLevel, userLevel => userLevel.user, {
-        cascadeRemove: true,
-        cascadeInsert: true
+        cascade: true
     }),
     __metadata("design:type", _1.UserLevel)
 ], User.prototype, "level", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.UserBalance, userBalance => userBalance.user, {
-        cascadeRemove: true,
-        cascadeInsert: true
+        cascade: true
     }),
     __metadata("design:type", _1.UserBalance)
 ], User.prototype, "balance", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.UserProfile, userProfile => userProfile.user, {
-        cascadeInsert: true,
-        cascadeRemove: true
+        cascade: true
     }),
     __metadata("design:type", _1.UserProfile)
 ], User.prototype, "profile", void 0);

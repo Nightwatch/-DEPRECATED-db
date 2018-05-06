@@ -17,8 +17,7 @@ export class GiveawayItem {
   url: string
 
   @OneToOne(type => GiveawayItemKey, key => key.giveawayItem, {
-    cascadeInsert: true,
-    cascadeRemove: true
+    cascade: true
   })
   key: GiveawayItemKey
 

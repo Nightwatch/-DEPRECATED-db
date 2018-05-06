@@ -46,8 +46,7 @@ __decorate([
 ], Referral.prototype, "dateCreated", void 0);
 __decorate([
     typeorm_1.OneToOne(type => __1.ReferralRole, referralRole => referralRole.referral, {
-        cascadeInsert: true,
-        cascadeRemove: true
+        cascade: true
     }),
     __metadata("design:type", __1.ReferralRole
     /**
@@ -75,7 +74,7 @@ __decorate([
 ], Referral.prototype, "guild", void 0);
 __decorate([
     typeorm_1.OneToMany(type => __1.ReferralUnlockedReward, unlockedReward => unlockedReward.referral, {
-        cascadeInsert: true
+        cascade: true
     }),
     __metadata("design:type", Array)
 ], Referral.prototype, "unlockedRewards", void 0);

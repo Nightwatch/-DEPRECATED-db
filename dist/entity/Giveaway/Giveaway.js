@@ -48,7 +48,7 @@ __decorate([
 ], Giveaway.prototype, "guild", void 0);
 __decorate([
     typeorm_1.OneToMany(type => _1.GiveawayItem, item => item.giveaway, {
-        cascadeInsert: true
+        cascade: true
     }),
     __metadata("design:type", Array)
 ], Giveaway.prototype, "items", void 0);

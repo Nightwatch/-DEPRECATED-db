@@ -33,8 +33,7 @@ __decorate([
 ], Guild.prototype, "dateCreated", void 0);
 __decorate([
     typeorm_1.OneToOne(type => _1.GuildSettings, guildSettings => guildSettings.guild, {
-        cascadeRemove: true,
-        cascadeInsert: true
+        cascade: true
     }),
     __metadata("design:type", _1.GuildSettings)
 ], Guild.prototype, "settings", void 0);

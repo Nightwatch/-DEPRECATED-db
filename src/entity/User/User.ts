@@ -20,7 +20,7 @@ export class User {
   @Column()
   banned: boolean
 
-  @Column({ nullable: true })
+  @Column('timestamp without time zone', { nullable: true })
   dateLastMessage: Date | null
 
   @OneToOne(type => UserSettings, userSettings => userSettings.user, {

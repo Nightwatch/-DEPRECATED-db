@@ -35,7 +35,7 @@ __decorate([
     __metadata("design:type", String)
 ], GuildSupportTicket.prototype, "status", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    typeorm_1.Column('timestamp without time zone', { nullable: true }),
     __metadata("design:type", Object)
 ], GuildSupportTicket.prototype, "dateClosed", void 0);
 __decorate([

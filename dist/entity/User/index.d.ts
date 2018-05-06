@@ -4,3 +4,4 @@ export * from './UserVerification';
 export * from './UserLevel';
 export * from './UserReferral';
 export * from './UserBalance';
+export * from './UserProfile';

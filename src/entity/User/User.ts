@@ -1,6 +1,6 @@
 import { Entity, PrimaryColumn, Column, OneToOne } from 'typeorm'
 import { IsFQDN } from 'class-validator'
-import { UserSettings, UserVerification, UserLevel, UserBalance } from '.'
+import { UserSettings, UserVerification, UserLevel, UserBalance, UserProfile } from '.'
 
 @Entity()
 export class User {
@@ -46,6 +46,12 @@ export class User {
     cascadeInsert: true
   })
   balance: UserBalance
+
+  @OneToOne(type => UserProfile, userProfile => userProfile.user, {
+    cascadeInsert: true,
+    cascadeRemove: true
+  })
+  profile: UserProfile
 
   constructor (user?: User) {
     if (user) {

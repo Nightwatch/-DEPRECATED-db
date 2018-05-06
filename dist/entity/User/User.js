@@ -72,6 +72,13 @@ __decorate([
     }),
     __metadata("design:type", _1.UserBalance)
 ], User.prototype, "balance", void 0);
+__decorate([
+    typeorm_1.OneToOne(type => _1.UserProfile, userProfile => userProfile.user, {
+        cascadeInsert: true,
+        cascadeRemove: true
+    }),
+    __metadata("design:type", _1.UserProfile)
+], User.prototype, "profile", void 0);
 User = __decorate([
     typeorm_1.Entity(),
     __metadata("design:paramtypes", [User])

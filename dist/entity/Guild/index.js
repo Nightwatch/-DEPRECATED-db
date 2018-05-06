@@ -6,4 +6,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./Guild"));
 __export(require("./GuildSettings"));
 __export(require("./GuildSuggestion"));
+__export(require("./GuildSupportTicket"));
 //# sourceMappingURL=index.js.map

@@ -42,6 +42,10 @@ __decorate([
     typeorm_1.OneToMany(type => _1.GuildSuggestion, guildSuggestion => guildSuggestion.guild),
     __metadata("design:type", Array)
 ], Guild.prototype, "suggestions", void 0);
+__decorate([
+    typeorm_1.OneToMany(type => _1.GuildSupportTicket, supportTicket => supportTicket.guild),
+    __metadata("design:type", Array)
+], Guild.prototype, "supportTickets", void 0);
 Guild = __decorate([
     typeorm_1.Entity(),
     __metadata("design:paramtypes", [Guild])

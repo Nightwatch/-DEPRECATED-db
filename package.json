@@ -1,6 +1,6 @@
 {
   "name": "@natsuki/db",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Database package for the Natsuki API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

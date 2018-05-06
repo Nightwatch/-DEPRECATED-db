@@ -20,4 +20,10 @@ export class UserProfile {
   @OneToOne(type => User, user => user.profile)
   @JoinColumn()
   user: User
+
+  constructor () {
+    this.title = ''
+    this.bio = ''
+    this.background = 'default'
+  }
 }

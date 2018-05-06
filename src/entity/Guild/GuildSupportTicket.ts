@@ -20,7 +20,7 @@ export class GuildSupportTicket {
   @Column('varchar')
   status: string
 
-  @Column({ nullable: true })
+  @Column('timestamp without time zone', { nullable: true })
   dateClosed: Date | null
 
   @Column()

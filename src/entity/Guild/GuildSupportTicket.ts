@@ -32,14 +32,14 @@ export class GuildSupportTicket {
   @Column('varchar')
   title: string
 
+  @Column('varchar')
+  userId: string
+
+  @Column('varchar')
+  closedUserId: string
+
   @Column('varchar', { nullable: true })
   closedReason: string | null
-
-  @ManyToOne(type => User)
-  user: User
-
-  @ManyToOne(type => User)
-  closedUser: User
 
   @ManyToOne(type => Guild, guild => guild.suggestions)
   guild: Guild

@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const _1 = require(".");
-const __1 = require("..");
 let GuildSupportTicket = class GuildSupportTicket {
 };
 __decorate([
@@ -51,17 +50,17 @@ __decorate([
     __metadata("design:type", String)
 ], GuildSupportTicket.prototype, "title", void 0);
 __decorate([
+    typeorm_1.Column('varchar'),
+    __metadata("design:type", String)
+], GuildSupportTicket.prototype, "userId", void 0);
+__decorate([
+    typeorm_1.Column('varchar'),
+    __metadata("design:type", String)
+], GuildSupportTicket.prototype, "closedUserId", void 0);
+__decorate([
     typeorm_1.Column('varchar', { nullable: true }),
     __metadata("design:type", Object)
 ], GuildSupportTicket.prototype, "closedReason", void 0);
-__decorate([
-    typeorm_1.ManyToOne(type => __1.User),
-    __metadata("design:type", __1.User)
-], GuildSupportTicket.prototype, "user", void 0);
-__decorate([
-    typeorm_1.ManyToOne(type => __1.User),
-    __metadata("design:type", __1.User)
-], GuildSupportTicket.prototype, "closedUser", void 0);
 __decorate([
     typeorm_1.ManyToOne(type => _1.Guild, guild => guild.suggestions),
     __metadata("design:type", _1.Guild)

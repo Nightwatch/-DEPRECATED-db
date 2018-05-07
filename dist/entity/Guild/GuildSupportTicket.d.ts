@@ -1,5 +1,4 @@
 import { Guild } from '.';
-import { User } from '..';
 export declare class GuildSupportTicket {
     id: number;
     messageId: string;
@@ -10,8 +9,8 @@ export declare class GuildSupportTicket {
     dateCreated: Date;
     color: string;
     title: string;
+    userId: string;
+    closedUserId: string;
     closedReason: string | null;
-    user: User;
-    closedUser: User;
     guild: Guild;
 }

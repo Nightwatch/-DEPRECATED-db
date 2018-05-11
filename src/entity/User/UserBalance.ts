@@ -13,8 +13,8 @@ export class UserBalance {
   @Column()
   balance: number
 
-  @Column()
-  dateLastClaimedDailies: Date
+  @Column('timestamp without time zone', { nullable: true })
+  dateLastClaimedDailies: Date | null
 
   @Index({ unique: true })
   @OneToOne(type => User, user => user.level)
@@ -22,8 +22,8 @@ export class UserBalance {
   user: User
 
   constructor () {
-    this.netWorth = 100
-    this.balance = 100
+    this.netWorth = 0
+    this.balance = 0
     this.dateLastClaimedDailies = new Date()
   }
 }

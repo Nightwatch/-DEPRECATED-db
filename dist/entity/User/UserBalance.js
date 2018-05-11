@@ -13,8 +13,8 @@ const typeorm_1 = require("typeorm");
 const _1 = require(".");
 let UserBalance = class UserBalance {
     constructor() {
-        this.netWorth = 100;
-        this.balance = 100;
+        this.netWorth = 0;
+        this.balance = 0;
         this.dateLastClaimedDailies = new Date();
     }
 };
@@ -31,8 +31,8 @@ __decorate([
     __metadata("design:type", Number)
 ], UserBalance.prototype, "balance", void 0);
 __decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", Date)
+    typeorm_1.Column('timestamp without time zone', { nullable: true }),
+    __metadata("design:type", Object)
 ], UserBalance.prototype, "dateLastClaimedDailies", void 0);
 __decorate([
     typeorm_1.Index({ unique: true }),

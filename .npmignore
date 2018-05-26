@@ -2,5 +2,5 @@ src/
 !dist/
 .git/
 *.json
-!node_modules/
+node_modules/
 !package.json

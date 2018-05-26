@@ -1,25 +1,28 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, Index } from 'typeorm'
-import { Guild } from '.'
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToOne,
+  JoinColumn,
+  Index
+} from 'typeorm';
+import { Guild } from '.';
 
 @Entity()
 export class GuildSettings {
+  @PrimaryGeneratedColumn() id: number;
 
-  @PrimaryGeneratedColumn()
-  id: number
+  @Column() levelsEnabled: boolean;
 
-  @Column()
-  levelsEnabled: boolean
-
-  @Column()
-  directMessagesEnabled: boolean
+  @Column() directMessagesEnabled: boolean;
 
   @Index({ unique: true })
-  @OneToOne(type => Guild, guild => guild.settings)
+  @OneToOne((type) => Guild, (guild) => guild.settings)
   @JoinColumn()
-  guild: Guild
+  guild: Guild;
 
-  constructor () {
-    this.levelsEnabled = true
-    this.directMessagesEnabled = true
+  constructor() {
+    this.levelsEnabled = true;
+    this.directMessagesEnabled = true;
   }
 }

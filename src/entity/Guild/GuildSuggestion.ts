@@ -1,33 +1,32 @@
-import { Entity, Column, OneToOne, JoinColumn, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
-import { Guild } from '.'
+import {
+  Entity,
+  Column,
+  OneToOne,
+  JoinColumn,
+  Index,
+  ManyToOne,
+  PrimaryGeneratedColumn
+} from 'typeorm';
+import { Guild } from '.';
 
 @Entity()
 export class GuildSuggestion {
+  @PrimaryGeneratedColumn() id: number;
 
-  @PrimaryGeneratedColumn()
-  id: number
+  @Column('varchar') color: string;
 
-  @Column('varchar')
-  color: string
+  @Column('varchar') description: string;
 
-  @Column('varchar')
-  description: string
+  @Column('varchar') messageId: string;
 
-  @Column('varchar')
-  messageId: string
+  @Column('varchar') userId: string;
 
-  @Column('varchar')
-  userId: string
+  @Column() dateCreated: Date;
 
-  @Column()
-  dateCreated: Date
+  @Column() likes: number;
 
-  @Column()
-  likes: number
+  @Column() dislikes: number;
 
-  @Column()
-  dislikes: number
-
-  @ManyToOne(type => Guild, guild => guild.suggestions)
-  guild: Guild
+  @ManyToOne((type) => Guild, (guild) => guild.suggestions)
+  guild: Guild;
 }

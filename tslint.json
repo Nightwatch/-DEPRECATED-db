@@ -1,14 +1,13 @@
 {
-    "defaultSeverity": "error",
-  "extends": [
-    "tslint-config-standard"
-  ],
-    "jsRules": {},
+  "defaultSeverity": "error",
+  "extends": ["tslint-config-standard"],
+  "jsRules": {},
   "rules": {
     "no-unused-expression": true,
     "no-unused-variable": true,
-    "no-unnecessary-qualifier": true
+    "no-unnecessary-qualifier": true,
+    "semicolon": true,
+    "space-before-function-paren": false
   },
-  "rulesDirectory": [
-  ]
+  "rulesDirectory": []
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@natsuki/db",
+  "name": "@nightwatch/db",
   "version": "0.9.4",
-  "description": "Database package for the Natsuki API",
+  "description": "Database package for the Nightwatch API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NatsukiBot/db.git"
+    "url": "git+https://github.com/NightwatchBot/db.git"
   },
   "author": "Tanner Goins",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/NatsukiBot/db/issues"
+    "url": "https://github.com/NightwatchBot/db/issues"
   },
-  "homepage": "https://github.com/NatsukiBot/db#readme",
+  "homepage": "https://github.com/NightwatchBot/db#readme",
   "dependencies": {
     "class-validator": "^0.8.1",
     "pg": "^7.4.1",

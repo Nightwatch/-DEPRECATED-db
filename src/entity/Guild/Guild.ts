@@ -1,5 +1,10 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
-import { GuildSettings, GuildSuggestion, GuildSupportTicket } from '.'
+import {
+  GuildSettings,
+  GuildSuggestion,
+  GuildSupportTicket,
+  GuildUser
+} from '.'
 
 @Entity()
 export class Guild {
@@ -21,7 +26,10 @@ export class Guild {
   @OneToMany(type => GuildSupportTicket, supportTicket => supportTicket.guild)
   supportTickets: GuildSupportTicket[]
 
-  constructor (guild?: Guild) {
+  @OneToMany(type => GuildUser, guildUser => guildUser.guild)
+  users: GuildUser[]
+
+  constructor(guild?: Guild) {
     if (guild) {
       Object.assign(this, guild)
     }

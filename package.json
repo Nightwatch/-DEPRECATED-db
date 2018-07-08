@@ -1,6 +1,6 @@
 {
   "name": "@nightwatch/db",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Database package for the Nightwatch API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

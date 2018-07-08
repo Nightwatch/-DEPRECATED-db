@@ -6,7 +6,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn
 } from 'typeorm'
-import { GuildUser } from './GuildUser'
+import { GuildUser } from '.'
 
 @Entity()
 export class GuildUserBan {
@@ -18,7 +18,8 @@ export class GuildUserBan {
 
   @Column('varchar') reason: string
 
-  @Column('boolean') unbanned: boolean
+  @Column('varchar', { nullable: true, length: 10 })
+  length: string | null
 
   @Index({ unique: true })
   @ManyToOne(type => GuildUser, guildUser => guildUser.bans)

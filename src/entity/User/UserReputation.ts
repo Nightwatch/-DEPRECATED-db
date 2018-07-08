@@ -6,18 +6,18 @@ import {
   Index,
   PrimaryGeneratedColumn
 } from 'typeorm'
-import { GuildUser } from './GuildUser'
+import { User } from '.'
 
 @Entity()
-export class GuildUserReputation {
+export class UserReputation {
   @PrimaryGeneratedColumn() id: number
 
   @Column('number') reputation: number
 
   @Index({ unique: true })
-  @OneToOne(type => GuildUser, guildUser => guildUser.reputation)
+  @OneToOne(type => User, user => user.reputation)
   @JoinColumn()
-  user: GuildUser
+  user: User
 
   constructor() {
     this.reputation = 0

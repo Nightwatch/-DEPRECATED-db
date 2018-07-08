@@ -6,12 +6,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn
 } from 'typeorm'
-import { Guild } from '.'
-import { GuildUserWarning } from './GuildUserWarning'
-import { GuildUserKick } from './GuildUserKick'
-import { GuildUserBan } from './GuildUserBan'
-import { GuildUserReputation } from './GuildUserReputation'
-import { User } from '../User'
+import { Guild, GuildUserWarning, GuildUserKick, GuildUserBan } from '.'
+import { User } from '..'
 
 @Entity()
 export class GuildUser {
@@ -37,13 +33,7 @@ export class GuildUser {
   @OneToMany(type => GuildUserBan, guildUserBan => guildUserBan.user)
   bans: GuildUserBan[]
 
-  @OneToOne(
-    type => GuildUserReputation,
-    guildUserReputation => guildUserReputation.user
-  )
-  reputation: GuildUserReputation
-
-  @OneToOne(type => User)
+  @ManyToOne(type => User)
   user: User
 
   @ManyToOne(type => Guild, guild => guild.users)

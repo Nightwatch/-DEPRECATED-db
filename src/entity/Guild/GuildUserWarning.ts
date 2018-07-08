@@ -6,7 +6,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn
 } from 'typeorm'
-import { GuildUser } from './GuildUser'
+import { GuildUser } from '.'
 
 @Entity()
 export class GuildUserWarning {

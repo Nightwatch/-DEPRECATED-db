@@ -13,7 +13,7 @@ export class UserBalance {
   dateLastClaimedDailies: Date | null
 
   @Index({ unique: true })
-  @OneToOne(type => User, user => user.level)
+  @OneToOne(type => User, user => user.balance)
   @JoinColumn()
   user: User
 

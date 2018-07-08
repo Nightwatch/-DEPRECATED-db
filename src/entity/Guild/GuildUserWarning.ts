@@ -12,14 +12,11 @@ import { GuildUser } from './GuildUser'
 export class GuildUserWarning {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar')
-  issuerId: string
+  @Column('varchar') issuerId: string
 
-  @Column('timestamp without time zone')
-  timestamp: Date
+  @Column('timestamp without time zone') timestamp: Date
 
-  @Column('varchar')
-  reason: string
+  @Column('varchar') reason: string
 
   @Index({ unique: true })
   @ManyToOne(type => GuildUser, guildUser => guildUser.warnings)

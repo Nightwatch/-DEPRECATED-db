@@ -20,13 +20,15 @@ export class GuildUser {
   @Column('varchar', { length: 100 })
   nickname: string
 
-  @Column('timestamp without time zone')
-  dateJoined: Date
+  @Column('timestamp without time zone') dateJoined: Date
 
   @Column('timestamp without time zone', { nullable: true })
   dateLastMessage: Date | null
 
-  @OneToMany(type => GuildUserWarning, guildUserWarning => guildUserWarning.user)
+  @OneToMany(
+    type => GuildUserWarning,
+    guildUserWarning => guildUserWarning.user
+  )
   warnings: GuildUserWarning[]
 
   @OneToMany(type => GuildUserKick, guildUserKick => guildUserKick.user)
@@ -35,7 +37,10 @@ export class GuildUser {
   @OneToMany(type => GuildUserBan, guildUserBan => guildUserBan.user)
   bans: GuildUserBan[]
 
-  @OneToOne(type => GuildUserReputation, guildUserReputation => guildUserReputation.user)
+  @OneToOne(
+    type => GuildUserReputation,
+    guildUserReputation => guildUserReputation.user
+  )
   reputation: GuildUserReputation
 
   @OneToOne(type => User)

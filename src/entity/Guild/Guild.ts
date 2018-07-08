@@ -1,6 +1,6 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
 import { GuildSettings, GuildSuggestion, GuildSupportTicket } from '.'
-import { GuildUser } from './GuildUser';
+import { GuildUser } from './GuildUser'
 
 @Entity()
 export class Guild {

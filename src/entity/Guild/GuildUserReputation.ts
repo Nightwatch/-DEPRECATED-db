@@ -12,8 +12,7 @@ import { GuildUser } from './GuildUser'
 export class GuildUserReputation {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('number')
-  reputation: number
+  @Column('number') reputation: number
 
   @Index({ unique: true })
   @OneToOne(type => GuildUser, guildUser => guildUser.reputation)

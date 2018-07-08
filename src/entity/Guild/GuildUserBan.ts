@@ -12,17 +12,13 @@ import { GuildUser } from './GuildUser'
 export class GuildUserBan {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar')
-  issuerId: string
+  @Column('varchar') issuerId: string
 
-  @Column('timestamp without time zone')
-  timestamp: Date
+  @Column('timestamp without time zone') timestamp: Date
 
-  @Column('varchar')
-  reason: string
+  @Column('varchar') reason: string
 
-  @Column('boolean')
-  unbanned: boolean
+  @Column('boolean') unbanned: boolean
 
   @Index({ unique: true })
   @ManyToOne(type => GuildUser, guildUser => guildUser.bans)

@@ -1,2 +1,2 @@
-import 'reflect-metadata';
-export * from './entity';
+import 'reflect-metadata'
+export * from './entity'

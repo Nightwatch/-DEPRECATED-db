@@ -6,7 +6,6 @@
     "no-unused-expression": true,
     "no-unused-variable": true,
     "no-unnecessary-qualifier": true,
-    "semicolon": true,
     "space-before-function-paren": false
   },
   "rulesDirectory": []

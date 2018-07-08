@@ -1,36 +1,30 @@
-import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm';
-import { GuildSettings, GuildSuggestion, GuildSupportTicket } from '.';
+import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
+import { GuildSettings, GuildSuggestion, GuildSupportTicket } from '.'
 
 @Entity()
 export class Guild {
-  @PrimaryColumn() id: string;
+  @PrimaryColumn() id: string
 
   @Column('varchar', { length: 100 })
-  name: string;
+  name: string
 
-  @Column() dateCreated: Date;
+  @Column() dateCreated: Date
 
-  @OneToOne((type) => GuildSettings, (guildSettings) => guildSettings.guild, {
+  @OneToOne(type => GuildSettings, guildSettings => guildSettings.guild, {
     cascade: true
   })
-  settings: GuildSettings;
+  settings: GuildSettings
 
-  @OneToMany(
-    (type) => GuildSuggestion,
-    (guildSuggestion) => guildSuggestion.guild
-  )
-  suggestions: GuildSuggestion[];
+  @OneToMany(type => GuildSuggestion, guildSuggestion => guildSuggestion.guild)
+  suggestions: GuildSuggestion[]
 
-  @OneToMany(
-    (type) => GuildSupportTicket,
-    (supportTicket) => supportTicket.guild
-  )
-  supportTickets: GuildSupportTicket[];
+  @OneToMany(type => GuildSupportTicket, supportTicket => supportTicket.guild)
+  supportTickets: GuildSupportTicket[]
 
-  constructor(guild?: Guild) {
+  constructor (guild?: Guild) {
     if (guild) {
-      Object.assign(this, guild);
+      Object.assign(this, guild)
     }
-    this.dateCreated = new Date();
+    this.dateCreated = new Date()
   }
 }

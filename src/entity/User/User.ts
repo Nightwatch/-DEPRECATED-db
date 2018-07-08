@@ -1,63 +1,53 @@
-import { Entity, PrimaryColumn, Column, OneToOne } from 'typeorm';
-import { IsFQDN } from 'class-validator';
-import {
-  UserSettings,
-  UserVerification,
-  UserLevel,
-  UserBalance,
-  UserProfile
-} from '.';
+import { Entity, PrimaryColumn, Column, OneToOne } from 'typeorm'
+import { IsFQDN } from 'class-validator'
+import { UserSettings, UserVerification, UserLevel, UserBalance, UserProfile } from '.'
 
 @Entity()
 export class User {
-  @PrimaryColumn() id: string;
+  @PrimaryColumn() id: string
 
   @Column('varchar', { length: 100 })
-  name: string;
+  name: string
 
   @Column('varchar', { nullable: true })
   @IsFQDN()
-  avatarUrl: string;
+  avatarUrl: string
 
-  @Column() dateCreated: Date;
+  @Column() dateCreated: Date
 
-  @Column() banned: boolean;
+  @Column() banned: boolean
 
   @Column('timestamp without time zone', { nullable: true })
-  dateLastMessage: Date | null;
+  dateLastMessage: Date | null
 
-  @OneToOne((type) => UserSettings, (userSettings) => userSettings.user, {
+  @OneToOne(type => UserSettings, userSettings => userSettings.user, {
     cascade: true
   })
-  settings: UserSettings;
+  settings: UserSettings
 
-  @OneToOne(
-    (type) => UserVerification,
-    (userVerification) => userVerification.user,
-    {
-      cascade: true
-    }
-  )
-  verification: UserVerification;
-
-  @OneToOne((type) => UserLevel, (userLevel) => userLevel.user, {
+  @OneToOne(type => UserVerification, userVerification => userVerification.user, {
     cascade: true
   })
-  level: UserLevel;
+  verification: UserVerification
 
-  @OneToOne((type) => UserBalance, (userBalance) => userBalance.user, {
+  @OneToOne(type => UserLevel, userLevel => userLevel.user, {
     cascade: true
   })
-  balance: UserBalance;
+  level: UserLevel
 
-  @OneToOne((type) => UserProfile, (userProfile) => userProfile.user, {
+  @OneToOne(type => UserBalance, userBalance => userBalance.user, {
     cascade: true
   })
-  profile: UserProfile;
+  balance: UserBalance
 
-  constructor(user?: User) {
+  @OneToOne(type => UserProfile, userProfile => userProfile.user, {
+    cascade: true
+  })
+  profile: UserProfile
+
+  constructor (user?: User) {
     if (user) {
-      Object.assign(this, user);
+      Object.assign(this, user)
     }
   }
 }

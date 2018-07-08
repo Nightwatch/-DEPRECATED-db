@@ -1,31 +1,24 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  OneToOne,
-  JoinColumn,
-  Index
-} from 'typeorm';
-import { User } from '.';
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, Index } from 'typeorm'
+import { User } from '.'
 
 @Entity()
 export class UserProfile {
-  @PrimaryGeneratedColumn() id: number;
+  @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar') title: string;
+  @Column('varchar') title: string
 
-  @Column('varchar') bio: string;
+  @Column('varchar') bio: string
 
-  @Column('varchar') background: string;
+  @Column('varchar') background: string
 
   @Index({ unique: true })
-  @OneToOne((type) => User, (user) => user.profile)
+  @OneToOne(type => User, user => user.profile)
   @JoinColumn()
-  user: User;
+  user: User
 
-  constructor() {
-    this.title = '';
-    this.bio = '';
-    this.background = 'default';
+  constructor () {
+    this.title = ''
+    this.bio = ''
+    this.background = 'default'
   }
 }

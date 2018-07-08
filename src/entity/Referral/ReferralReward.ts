@@ -1,13 +1,13 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { Referral } from '..';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Referral } from '..'
 
 @Entity()
 export class ReferralReward {
-  @PrimaryGeneratedColumn() id: number;
+  @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar') name: string;
+  @Column('varchar') name: string
 
-  @Column('varchar') description: string;
+  @Column('varchar') description: string
 
-  @Column() referralsNeeded: number;
+  @Column() referralsNeeded: number
 }

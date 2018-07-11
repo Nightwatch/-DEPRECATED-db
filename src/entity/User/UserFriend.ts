@@ -2,8 +2,8 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToOne,
-  Index
+  Index,
+  ManyToOne
 } from 'typeorm'
 import { User } from '.'
 
@@ -13,11 +13,11 @@ export class UserFriend {
   @PrimaryGeneratedColumn() id: number
 
   @Index({ unique: true })
-  @OneToOne(type => User)
+  @ManyToOne(type => User, user => user.friends)
   user: User
 
   @Index({ unique: true })
-  @OneToOne(type => User)
+  @ManyToOne(type => User, user => user.friends)
   friend: User
 
   @Column('timestamp without time zone') dateAdded: Date

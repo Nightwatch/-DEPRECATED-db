@@ -58,8 +58,8 @@ export class User {
   @OneToOne(type => UserReputation, userReputation => userReputation.user)
   reputation: UserReputation
 
-  @OneToMany(type => UserFriend, userFriend => userFriend.user)
-  friends: UserFriend
+  @OneToMany(type => UserFriend, userFriend => userFriend)
+  friendships: UserFriend
 
   constructor(user?: User) {
     if (user) {

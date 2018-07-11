@@ -13,11 +13,11 @@ export class UserFriend {
   @PrimaryGeneratedColumn() id: number
 
   @Index({ unique: true })
-  @ManyToOne(type => User, user => user.friends)
+  @ManyToOne(type => User, user => user.friendships)
   user: User
 
   @Index({ unique: true })
-  @ManyToOne(type => User, user => user.friends)
+  @ManyToOne(type => User, user => user.friendships)
   friend: User
 
   @Column('timestamp without time zone') dateAdded: Date

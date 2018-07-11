@@ -1,7 +1,6 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
 import { IsFQDN } from 'class-validator'
-import { UserSettings, UserVerification, UserLevel, UserBalance, UserProfile, UserReputation } from '.'
-import { UserFriendRequest } from './UserFriendRequest'
+import { UserSettings, UserVerification, UserLevel, UserBalance, UserProfile, UserReputation, UserFriendRequest } from '.'
 
 @Entity()
 export class User {
@@ -48,10 +47,10 @@ export class User {
   reputation: UserReputation
 
   @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.user)
-  outgoingFriendRequests: UserFriendRequest
+  outgoingFriendRequests: UserFriendRequest[]
 
   @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.receiver)
-  incomingFriendRequests: UserFriendRequest
+  incomingFriendRequests: UserFriendRequest[]
 
   constructor (user?: User) {
     if (user) {

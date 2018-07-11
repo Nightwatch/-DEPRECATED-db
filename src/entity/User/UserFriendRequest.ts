@@ -12,9 +12,11 @@ import { User } from '.'
 export class UserFriendRequest {
   @PrimaryGeneratedColumn() id: number
 
+  @Index()
   @ManyToOne(type => User, user => user.outgoingFriendRequests)
   user: User
 
+  @Index()
   @ManyToOne(type => User, user => user.incomingFriendRequests)
   receiver: User
 

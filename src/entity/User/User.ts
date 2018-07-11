@@ -48,7 +48,10 @@ export class User {
   reputation: UserReputation
 
   @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.user)
-  friendRequests: UserFriendRequest
+  outgoingFriendRequests: UserFriendRequest
+
+  @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.receiver)
+  incomingFriendRequests: UserFriendRequest
 
   constructor (user?: User) {
     if (user) {

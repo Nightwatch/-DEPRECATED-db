@@ -12,10 +12,10 @@ import { User } from '.'
 export class UserFriendRequest {
   @PrimaryGeneratedColumn() id: number
 
-  @ManyToOne(type => User, user => user.friendRequests)
+  @ManyToOne(type => User, user => user.outgoingFriendRequests)
   user: User
 
-  @ManyToOne(type => User, user => user.friendRequests)
+  @ManyToOne(type => User, user => user.incomingFriendRequests)
   receiver: User
 
   @Column('timestamp without time zone') timestamp: Date

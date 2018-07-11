@@ -1,6 +1,6 @@
 {
   "name": "@nightwatch/db",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Database package for the Nightwatch API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NightwatchBot/db.git"
+    "url": "git+https://github.com/Nightwatch/db.git"
   },
   "author": "Tanner Goins",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/NightwatchBot/db/issues"
+    "url": "https://github.com/Nightwatch/db/issues"
   },
-  "homepage": "https://github.com/NightwatchBot/db#readme",
+  "homepage": "https://github.com/Nightwatch/db#readme",
   "dependencies": {
     "class-validator": "^0.8.1",
     "pg": "^7.4.1",

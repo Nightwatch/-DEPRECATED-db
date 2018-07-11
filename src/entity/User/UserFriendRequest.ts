@@ -1,14 +1,8 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  Index,
-  ManyToOne
-} from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, Index, ManyToOne } from 'typeorm'
 import { User } from '.'
 
 @Entity()
-@Index(['user', 'receiver'], { unique: true })
+@Index([ 'user', 'receiver' ], { unique: true })
 export class UserFriendRequest {
   @PrimaryGeneratedColumn() id: number
 
@@ -22,7 +16,7 @@ export class UserFriendRequest {
 
   @Column('timestamp without time zone') timestamp: Date
 
-  constructor(userFriendRequest?: UserFriendRequest) {
+  constructor (userFriendRequest?: UserFriendRequest) {
     if (userFriendRequest) {
       Object.assign(this, userFriendRequest)
     }

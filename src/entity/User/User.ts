@@ -32,13 +32,9 @@ export class User {
   })
   settings: UserSettings
 
-  @OneToOne(
-    type => UserVerification,
-    userVerification => userVerification.user,
-    {
-      cascade: true
-    }
-  )
+  @OneToOne(type => UserVerification, userVerification => userVerification.user, {
+    cascade: true
+  })
   verification: UserVerification
 
   @OneToOne(type => UserLevel, userLevel => userLevel.user, {
@@ -56,19 +52,25 @@ export class User {
   })
   profile: UserProfile
 
-  @OneToOne(type => UserReputation, userReputation => userReputation.user)
+  @OneToOne(type => UserReputation, userReputation => userReputation.user, {
+    cascade: true
+  })
   reputation: UserReputation
 
-  @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.user)
+  @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.user, {
+    cascade: true
+  })
   outgoingFriendRequests: UserFriendRequest[]
 
-  @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.receiver)
+  @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.receiver, {
+    cascade: true
+  })
   incomingFriendRequests: UserFriendRequest[]
 
   @OneToMany(type => UserFriend, userFriend => userFriend)
   friends: UserFriend[]
 
-  constructor(user?: User) {
+  constructor (user?: User) {
     if (user) {
       Object.assign(this, user)
     }

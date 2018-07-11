@@ -3,7 +3,8 @@ import {
   PrimaryGeneratedColumn,
   Column,
   OneToOne,
-  Index
+  Index,
+  ManyToOne
 } from 'typeorm'
 import { User } from '.'
 
@@ -12,10 +13,10 @@ import { User } from '.'
 export class UserFriendRequest {
   @PrimaryGeneratedColumn() id: number
 
-  @OneToOne(type => User)
+  @ManyToOne(type => User, user => user.friendRequests)
   user: User
 
-  @OneToOne(type => User)
+  @Column()
   receiver: User
 
   @Column('timestamp without time zone') timestamp: Date

@@ -1,6 +1,7 @@
-import { Entity, PrimaryColumn, Column, OneToOne } from 'typeorm'
+import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
 import { IsFQDN } from 'class-validator'
 import { UserSettings, UserVerification, UserLevel, UserBalance, UserProfile, UserReputation } from '.'
+import { UserFriendRequest } from './UserFriendRequest'
 
 @Entity()
 export class User {
@@ -45,6 +46,9 @@ export class User {
 
   @OneToOne(type => UserReputation, userReputation => userReputation.user)
   reputation: UserReputation
+
+  @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.user)
+  friendRequests: UserFriendRequest
 
   constructor (user?: User) {
     if (user) {

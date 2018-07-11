@@ -1,6 +1,15 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
 import { IsFQDN } from 'class-validator'
-import { UserSettings, UserVerification, UserLevel, UserBalance, UserProfile, UserReputation, UserFriendRequest } from '.'
+import {
+  UserSettings,
+  UserVerification,
+  UserLevel,
+  UserBalance,
+  UserProfile,
+  UserReputation,
+  UserFriend,
+  UserFriendRequest
+} from '.'
 
 @Entity()
 export class User {
@@ -23,9 +32,13 @@ export class User {
   })
   settings: UserSettings
 
-  @OneToOne(type => UserVerification, userVerification => userVerification.user, {
-    cascade: true
-  })
+  @OneToOne(
+    type => UserVerification,
+    userVerification => userVerification.user,
+    {
+      cascade: true
+    }
+  )
   verification: UserVerification
 
   @OneToOne(type => UserLevel, userLevel => userLevel.user, {
@@ -52,7 +65,10 @@ export class User {
   @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.receiver)
   incomingFriendRequests: UserFriendRequest[]
 
-  constructor (user?: User) {
+  @OneToMany(type => UserFriend, userFriend => userFriend)
+  friends: UserFriend[]
+
+  constructor(user?: User) {
     if (user) {
       Object.assign(this, user)
     }

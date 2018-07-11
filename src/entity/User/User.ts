@@ -6,9 +6,9 @@ import {
   UserLevel,
   UserBalance,
   UserProfile,
-  UserReputation
+  UserReputation,
+  UserFriend
 } from '.'
-import { UserFriend } from './UserFriend'
 
 @Entity()
 export class User {
@@ -59,7 +59,7 @@ export class User {
   reputation: UserReputation
 
   @OneToMany(type => UserFriend, userFriend => userFriend)
-  friendships: UserFriend
+  friends: UserFriend[]
 
   constructor(user?: User) {
     if (user) {

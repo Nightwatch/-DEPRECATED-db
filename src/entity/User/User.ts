@@ -7,7 +7,8 @@ import {
   UserBalance,
   UserProfile,
   UserReputation,
-  UserFriend
+  UserFriend,
+  UserFriendRequest
 } from '.'
 
 @Entity()
@@ -57,6 +58,12 @@ export class User {
 
   @OneToOne(type => UserReputation, userReputation => userReputation.user)
   reputation: UserReputation
+
+  @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.user)
+  outgoingFriendRequests: UserFriendRequest[]
+
+  @OneToMany(type => UserFriendRequest, userFriendRequest => userFriendRequest.receiver)
+  incomingFriendRequests: UserFriendRequest[]
 
   @OneToMany(type => UserFriend, userFriend => userFriend)
   friends: UserFriend[]

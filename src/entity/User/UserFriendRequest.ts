@@ -2,7 +2,6 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToOne,
   Index,
   ManyToOne
 } from 'typeorm'
@@ -16,7 +15,7 @@ export class UserFriendRequest {
   @ManyToOne(type => User, user => user.friendRequests)
   user: User
 
-  @Column()
+  @ManyToOne(type => User, user => user.friendRequests)
   receiver: User
 
   @Column('timestamp without time zone') timestamp: Date

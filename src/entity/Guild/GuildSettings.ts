@@ -9,6 +9,8 @@ export class GuildSettings {
 
   @Column() directMessagesEnabled: boolean
 
+  @Column() prefix: string
+
   @Index({ unique: true })
   @OneToOne(type => Guild, guild => guild.settings)
   @JoinColumn()

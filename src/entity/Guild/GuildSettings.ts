@@ -9,7 +9,7 @@ export class GuildSettings {
 
   @Column() directMessagesEnabled: boolean
 
-  @Column({ nullable: true })
+  @Column('varchar', { nullable: true })
   prefix: string | null
 
   @Index({ unique: true })

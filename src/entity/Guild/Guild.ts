@@ -4,7 +4,9 @@ import { IsString, MaxLength, IsDate } from 'class-validator'
 
 @Entity()
 export class Guild {
-  @PrimaryColumn() id: string
+  @PrimaryColumn()
+  @IsString()
+  id: string
 
   @Column('varchar', { length: 100 })
   @IsString()

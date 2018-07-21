@@ -34,7 +34,7 @@ export class GiveawayItemKey {
   giveawayItem: GiveawayItem
 
   /**
-   * The giveaway that item that the key is for is for.
+   * The giveaway that the key is linked to.
    *
    * @type {Giveaway}
    * @memberof GiveawayItemKey

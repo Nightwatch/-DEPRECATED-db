@@ -1,6 +1,6 @@
 import { PrimaryGeneratedColumn, Entity, ManyToOne, Column, OneToOne, Index } from 'typeorm'
 import { Giveaway } from '.'
-import { IsFQDN } from 'class-validator'
+import { IsFQDN, IsString } from 'class-validator'
 import { GiveawayItemKey } from './GiveawayItemKey'
 
 @Entity()
@@ -13,6 +13,7 @@ export class GiveawayItem {
    */
   @PrimaryGeneratedColumn() id: number
 
+<<<<<<< HEAD
   /**
    * The name of the item. Should be user-friendly.
    *
@@ -20,6 +21,11 @@ export class GiveawayItem {
    * @memberof GiveawayItem
    */
   @Column('varchar') name: string
+=======
+  @Column('varchar')
+  @IsString()
+  name: string
+>>>>>>> 62caf63f8d49cf7a1fc11e67ffb7efff45e0f22a
 
   /**
    * The URL of the item. Should be something like Steam link or store page.

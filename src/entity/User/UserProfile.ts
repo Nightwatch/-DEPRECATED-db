@@ -1,15 +1,21 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, Index } from 'typeorm'
 import { User } from '.'
-
+import { IsString } from 'class-validator'
 @Entity()
 export class UserProfile {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar') title: string
+  @Column('varchar')
+  @IsString()
+  title: string
 
-  @Column('varchar') bio: string
+  @Column('varchar')
+  @IsString()
+  bio: string
 
-  @Column('varchar') background: string
+  @Column('varchar')
+  @IsString()
+  background: string
 
   @Index({ unique: true })
   @OneToOne(type => User, user => user.profile)

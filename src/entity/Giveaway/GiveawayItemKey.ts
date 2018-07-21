@@ -1,5 +1,6 @@
 import { GiveawayItem, Giveaway } from '.'
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, Index, JoinColumn } from 'typeorm'
+import { IsString } from 'class-validator'
 
 @Entity()
 export class GiveawayItemKey {
@@ -19,6 +20,7 @@ export class GiveawayItemKey {
    */
   @Index({ unique: true })
   @Column('varchar')
+  @IsString()
   key: string
 
   /**

@@ -1,6 +1,7 @@
 import { PrimaryGeneratedColumn, Entity, ManyToOne, Column } from 'typeorm'
 import { Giveaway } from '.'
 import { User } from '..'
+import { IsDate } from 'class-validator'
 
 @Entity()
 export class GiveawayEntry {
@@ -12,6 +13,7 @@ export class GiveawayEntry {
    */
   @PrimaryGeneratedColumn() id: number
 
+<<<<<<< HEAD
   /**
    * The date the entry was made.
    *
@@ -19,6 +21,11 @@ export class GiveawayEntry {
    * @memberof GiveawayEntry
    */
   @Column() timestamp: Date
+=======
+  @Column()
+  @IsDate()
+  timestamp: Date
+>>>>>>> 62caf63f8d49cf7a1fc11e67ffb7efff45e0f22a
 
   /**
    * The user that entered the giveaway.

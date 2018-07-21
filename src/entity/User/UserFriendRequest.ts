@@ -1,10 +1,15 @@
 import { Entity, PrimaryGeneratedColumn, Column, Index, ManyToOne } from 'typeorm'
 import { User } from '.'
+import { IsDate } from 'class-validator'
 
 @Entity()
 @Index([ 'user', 'receiver' ], { unique: true })
 export class UserFriendRequest {
   @PrimaryGeneratedColumn() id: number
+
+  @Column('timestamp without time zone')
+  @IsDate()
+  timestamp: Date
 
   @Index()
   @ManyToOne(type => User, user => user.outgoingFriendRequests)
@@ -13,8 +18,6 @@ export class UserFriendRequest {
   @Index()
   @ManyToOne(type => User, user => user.incomingFriendRequests)
   receiver: User
-
-  @Column('timestamp without time zone') timestamp: Date
 
   constructor (userFriendRequest?: UserFriendRequest) {
     if (userFriendRequest) {

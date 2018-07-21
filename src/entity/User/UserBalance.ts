@@ -1,13 +1,18 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, Index } from 'typeorm'
 import { User } from '.'
+import { IsNumber } from 'class-validator'
 
 @Entity()
 export class UserBalance {
   @PrimaryGeneratedColumn() id: number
 
-  @Column() netWorth: number
+  @Column()
+  @IsNumber()
+  netWorth: number
 
-  @Column() balance: number
+  @Column()
+  @IsNumber()
+  balance: number
 
   @Column('timestamp without time zone', { nullable: true })
   dateLastClaimedDailies: Date | null

@@ -1,11 +1,14 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm'
 import { Referral, ReferralReward } from '..'
+import { IsDate } from 'class-validator'
 
 @Entity()
 export class ReferralUnlockedReward {
   @PrimaryGeneratedColumn() id: number
 
-  @Column() dateUnlocked: Date
+  @Column()
+  @IsDate()
+  dateUnlocked: Date
 
   @ManyToOne(type => ReferralReward)
   reward: ReferralReward

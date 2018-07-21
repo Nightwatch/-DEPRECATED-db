@@ -1,6 +1,7 @@
 import { PrimaryGeneratedColumn, Entity, Column, OneToMany, ManyToOne } from 'typeorm'
 import { GiveawayEntry, GiveawayItem } from '.'
 import { Guild, User } from '..'
+import { IsDate, IsBoolean } from 'class-validator'
 
 @Entity()
 export class Giveaway {
@@ -12,6 +13,7 @@ export class Giveaway {
    */
   @PrimaryGeneratedColumn() id: number
 
+<<<<<<< HEAD
   /**
    * The date of the end of the giveaway.
    *
@@ -43,6 +45,23 @@ export class Giveaway {
    * @memberof Giveaway
    */
   @Column() dateCreated: Date
+=======
+  @Column()
+  @IsDate()
+  dateEnd: Date
+
+  @Column()
+  @IsDate()
+  dateStart: Date
+
+  @Column()
+  @IsBoolean()
+  active: boolean
+
+  @Column()
+  @IsDate()
+  dateCreated: Date
+>>>>>>> 62caf63f8d49cf7a1fc11e67ffb7efff45e0f22a
 
   /**
    * The owner of the giveaway.

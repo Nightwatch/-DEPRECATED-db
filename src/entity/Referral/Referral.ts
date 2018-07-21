@@ -1,5 +1,5 @@
 import { Entity, PrimaryColumn, Column, OneToOne, ManyToOne, OneToMany } from 'typeorm'
-import { IsFQDN } from 'class-validator'
+import { IsFQDN, IsNumber, IsDate } from 'class-validator'
 import { User, Guild, ReferralRole, ReferralUnlockedReward } from '..'
 
 @Entity()
@@ -28,7 +28,9 @@ export class Referral {
    * @type {number}
    * @memberof Referral
    */
-  @Column() joinCount: number
+  @Column()
+  @IsNumber()
+  joinCount: number
 
   /**
    * The date the referral was created.
@@ -36,7 +38,9 @@ export class Referral {
    * @type {Date}
    * @memberof Referral
    */
-  @Column() dateCreated: Date
+  @Column()
+  @IsDate()
+  dateCreated: Date
 
   /**
    * The role that is given to each user that joins via the referral link.

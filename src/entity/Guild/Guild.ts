@@ -1,5 +1,6 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
 import { GuildSettings, GuildSuggestion, GuildSupportTicket, GuildUser } from '.'
+import { IsString, IsDate, MaxLength } from 'class-validator'
 
 @Entity()
 export class Guild {
@@ -9,7 +10,9 @@ export class Guild {
    * @type {string}
    * @memberof Guild
    */
-  @PrimaryColumn() id: string
+  @PrimaryColumn()
+  @IsString()
+  id: string
 
   /**
    * The name of the guild. Maximum length of 100 characters.
@@ -18,6 +21,8 @@ export class Guild {
    * @memberof Guild
    */
   @Column('varchar', { length: 100 })
+  @IsString()
+  @MaxLength(100)
   name: string
 
   /**
@@ -26,7 +31,9 @@ export class Guild {
    * @type {Date}
    * @memberof Guild
    */
-  @Column() dateCreated: Date
+  @Column()
+  @IsDate()
+  dateCreated: Date
 
   /**
    * The guild's settings.

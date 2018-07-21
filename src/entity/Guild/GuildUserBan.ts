@@ -1,22 +1,22 @@
-import {
-  Entity,
-  Column,
-  JoinColumn,
-  Index,
-  ManyToOne,
-  PrimaryGeneratedColumn
-} from 'typeorm'
+import { Entity, Column, JoinColumn, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { GuildUser } from '.'
+import { IsString, IsDate } from 'class-validator'
 
 @Entity()
 export class GuildUserBan {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar') issuerId: string
+  @Column('varchar')
+  @IsString()
+  issuerId: string
 
-  @Column('timestamp without time zone') timestamp: Date
+  @Column('timestamp without time zone')
+  @IsDate()
+  timestamp: Date
 
-  @Column('varchar') reason: string
+  @Column('varchar')
+  @IsString()
+  reason: string
 
   @Column('varchar', { nullable: true, length: 10 })
   length: string | null
@@ -26,7 +26,7 @@ export class GuildUserBan {
   @JoinColumn()
   user: GuildUser
 
-  constructor(guildUserBan?: GuildUserBan) {
+  constructor (guildUserBan?: GuildUserBan) {
     if (guildUserBan) {
       Object.assign(this, guildUserBan)
     }

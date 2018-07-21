@@ -1,15 +1,21 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, Index } from 'typeorm'
 import { Guild } from '.'
+import { IsBoolean, MaxLength } from 'class-validator'
 
 @Entity()
 export class GuildSettings {
   @PrimaryGeneratedColumn() id: number
 
-  @Column() levelsEnabled: boolean
+  @Column()
+  @IsBoolean()
+  levelsEnabled: boolean
 
-  @Column() directMessagesEnabled: boolean
+  @Column()
+  @IsBoolean()
+  directMessagesEnabled: boolean
 
-  @Column({ nullable: true })
+  @Column('varchar', { nullable: true, length: 32 })
+  @MaxLength(32)
   prefix: string | null
 
   @Index({ unique: true })

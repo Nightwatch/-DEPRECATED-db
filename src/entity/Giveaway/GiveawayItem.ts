@@ -13,19 +13,15 @@ export class GiveawayItem {
    */
   @PrimaryGeneratedColumn() id: number
 
-<<<<<<< HEAD
   /**
    * The name of the item. Should be user-friendly.
    *
    * @type {string}
    * @memberof GiveawayItem
    */
-  @Column('varchar') name: string
-=======
   @Column('varchar')
   @IsString()
   name: string
->>>>>>> 62caf63f8d49cf7a1fc11e67ffb7efff45e0f22a
 
   /**
    * The URL of the item. Should be something like Steam link or store page.

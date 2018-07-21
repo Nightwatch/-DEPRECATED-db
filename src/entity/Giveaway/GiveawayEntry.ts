@@ -13,19 +13,15 @@ export class GiveawayEntry {
    */
   @PrimaryGeneratedColumn() id: number
 
-<<<<<<< HEAD
   /**
    * The date the entry was made.
    *
    * @type {Date}
    * @memberof GiveawayEntry
    */
-  @Column() timestamp: Date
-=======
   @Column()
   @IsDate()
   timestamp: Date
->>>>>>> 62caf63f8d49cf7a1fc11e67ffb7efff45e0f22a
 
   /**
    * The user that entered the giveaway.

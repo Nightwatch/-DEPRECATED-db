@@ -13,14 +13,15 @@ export class Giveaway {
    */
   @PrimaryGeneratedColumn() id: number
 
-<<<<<<< HEAD
   /**
    * The date of the end of the giveaway.
    *
    * @type {Date}
    * @memberof Giveaway
    */
-  @Column() dateEnd: Date
+  @Column()
+  @IsDate()
+  dateEnd: Date
 
   /**
    * The date of the start of the giveaway.
@@ -28,7 +29,9 @@ export class Giveaway {
    * @type {Date}
    * @memberof Giveaway
    */
-  @Column() dateStart: Date
+  @Column()
+  @IsDate()
+  dateStart: Date
 
   /**
    * Whether or not the giveaway is active.
@@ -36,7 +39,9 @@ export class Giveaway {
    * @type {boolean}
    * @memberof Giveaway
    */
-  @Column() active: boolean
+  @Column()
+  @IsBoolean()
+  active: boolean
 
   /**
    * The date the giveaway was created.
@@ -44,24 +49,9 @@ export class Giveaway {
    * @type {Date}
    * @memberof Giveaway
    */
-  @Column() dateCreated: Date
-=======
-  @Column()
-  @IsDate()
-  dateEnd: Date
-
-  @Column()
-  @IsDate()
-  dateStart: Date
-
-  @Column()
-  @IsBoolean()
-  active: boolean
-
   @Column()
   @IsDate()
   dateCreated: Date
->>>>>>> 62caf63f8d49cf7a1fc11e67ffb7efff45e0f22a
 
   /**
    * The owner of the giveaway.

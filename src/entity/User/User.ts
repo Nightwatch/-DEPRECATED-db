@@ -13,7 +13,9 @@ import {
 
 @Entity()
 export class User {
-  @PrimaryColumn() id: string
+  @PrimaryColumn()
+  @IsString()
+  id: string
 
   @Column('varchar', { length: 100 })
   @IsString()

@@ -1,5 +1,5 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
-import { IsFQDN } from 'class-validator'
+import { IsFQDN, IsString, MaxLength, IsDate } from 'class-validator'
 import {
   UserSettings,
   UserVerification,
@@ -16,13 +16,17 @@ export class User {
   @PrimaryColumn() id: string
 
   @Column('varchar', { length: 100 })
+  @IsString()
+  @MaxLength(100)
   name: string
 
   @Column('varchar', { nullable: true })
   @IsFQDN()
   avatarUrl: string
 
-  @Column() dateCreated: Date
+  @Column()
+  @IsDate()
+  dateCreated: Date
 
   @Column('timestamp without time zone', { nullable: true })
   dateLastMessage: Date | null

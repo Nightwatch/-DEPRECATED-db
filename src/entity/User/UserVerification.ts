@@ -1,11 +1,14 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn, Index } from 'typeorm'
 import { User } from '.'
+import { IsBoolean } from 'class-validator'
 
 @Entity()
 export class UserVerification {
   @PrimaryGeneratedColumn() id: number
 
-  @Column() verified: boolean
+  @Column()
+  @IsBoolean()
+  verified: boolean
 
   @Column('varchar', { nullable: true })
   verificationToken: string

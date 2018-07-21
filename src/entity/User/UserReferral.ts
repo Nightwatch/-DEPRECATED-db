@@ -1,12 +1,15 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, Index } from 'typeorm'
 import { User } from '.'
 import { Referral } from '..'
+import { IsDate } from 'class-validator'
 
 @Entity()
 export class UserReferral {
   @PrimaryGeneratedColumn() id: number
 
-  @Column() dateUsed: Date
+  @Column()
+  @IsDate()
+  dateUsed: Date
 
   @ManyToOne(type => User)
   user: User

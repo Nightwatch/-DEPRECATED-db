@@ -1,15 +1,22 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, Index } from 'typeorm'
 import { User } from '.'
+import { IsNumber, IsDate } from 'class-validator'
 
 @Entity()
 export class UserLevel {
   @PrimaryGeneratedColumn() id: number
 
-  @Column() xp: number
+  @Column()
+  @IsNumber()
+  xp: number
 
-  @Column() level: number
+  @Column()
+  @IsNumber()
+  level: number
 
-  @Column() timestamp: Date
+  @Column()
+  @IsDate()
+  timestamp: Date
 
   @Index({ unique: true })
   @OneToOne(type => User, user => user.level)

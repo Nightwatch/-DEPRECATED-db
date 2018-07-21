@@ -1,19 +1,19 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
-import {
-  GuildSettings,
-  GuildSuggestion,
-  GuildSupportTicket,
-  GuildUser
-} from '.'
+import { GuildSettings, GuildSuggestion, GuildSupportTicket, GuildUser } from '.'
+import { IsString, MaxLength, IsDate } from 'class-validator'
 
 @Entity()
 export class Guild {
   @PrimaryColumn() id: string
 
   @Column('varchar', { length: 100 })
+  @IsString()
+  @MaxLength(100)
   name: string
 
-  @Column() dateCreated: Date
+  @Column()
+  @IsDate()
+  dateCreated: Date
 
   @OneToOne(type => GuildSettings, guildSettings => guildSettings.guild, {
     cascade: true
@@ -29,7 +29,7 @@ export class Guild {
   @OneToMany(type => GuildUser, guildUser => guildUser.guild)
   users: GuildUser[]
 
-  constructor(guild?: Guild) {
+  constructor (guild?: Guild) {
     if (guild) {
       Object.assign(this, guild)
     }

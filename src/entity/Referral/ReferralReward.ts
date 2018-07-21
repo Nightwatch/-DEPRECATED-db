@@ -1,13 +1,20 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 import { Referral } from '..'
+import { IsString, IsNumber } from 'class-validator'
 
 @Entity()
 export class ReferralReward {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar') name: string
+  @Column('varchar')
+  @IsString()
+  name: string
 
-  @Column('varchar') description: string
+  @Column('varchar')
+  @IsString()
+  description: string
 
-  @Column() referralsNeeded: number
+  @Column()
+  @IsNumber()
+  referralsNeeded: number
 }

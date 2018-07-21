@@ -1,13 +1,18 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, Index } from 'typeorm'
 import { User } from '.'
+import { IsBoolean } from 'class-validator'
 
 @Entity()
 export class UserSettings {
   @PrimaryGeneratedColumn() id: number
 
-  @Column() levelsEnabled: boolean
+  @Column()
+  @IsBoolean()
+  levelsEnabled: boolean
 
-  @Column() directMessagesEnabled: boolean
+  @Column()
+  @IsBoolean()
+  directMessagesEnabled: boolean
 
   @Index({ unique: true })
   @OneToOne(type => User, user => user.settings)

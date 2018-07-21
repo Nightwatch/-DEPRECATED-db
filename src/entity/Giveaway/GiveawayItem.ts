@@ -1,13 +1,15 @@
 import { PrimaryGeneratedColumn, Entity, ManyToOne, Column, OneToOne, Index } from 'typeorm'
 import { Giveaway } from '.'
-import { IsFQDN } from 'class-validator'
+import { IsFQDN, IsString } from 'class-validator'
 import { GiveawayItemKey } from './GiveawayItemKey'
 
 @Entity()
 export class GiveawayItem {
   @PrimaryGeneratedColumn() id: number
 
-  @Column('varchar') name: string
+  @Column('varchar')
+  @IsString()
+  name: string
 
   @Column('varchar')
   @IsFQDN()

@@ -1,29 +1,25 @@
-import {
-  Entity,
-  Column,
-  ManyToOne,
-  OneToMany,
-  PrimaryGeneratedColumn
-} from 'typeorm'
+import { Entity, Column, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
 import { Guild, GuildUserWarning, GuildUserKick, GuildUserBan } from '.'
 import { User } from '..'
+import { IsString, MaxLength, IsDate } from 'class-validator'
 
 @Entity()
 export class GuildUser {
   @PrimaryGeneratedColumn() id: number
 
   @Column('varchar', { length: 100 })
+  @IsString()
+  @MaxLength(100)
   nickname: string
 
-  @Column('timestamp without time zone') dateJoined: Date
+  @Column('timestamp without time zone')
+  @IsDate()
+  dateJoined: Date
 
   @Column('timestamp without time zone', { nullable: true })
   dateLastMessage: Date | null
 
-  @OneToMany(
-    type => GuildUserWarning,
-    guildUserWarning => guildUserWarning.user
-  )
+  @OneToMany(type => GuildUserWarning, guildUserWarning => guildUserWarning.user)
   warnings: GuildUserWarning[]
 
   @OneToMany(type => GuildUserKick, guildUserKick => guildUserKick.user)
@@ -38,7 +34,7 @@ export class GuildUser {
   @ManyToOne(type => Guild, guild => guild.users)
   guild: Guild
 
-  constructor(guildUser?: GuildUser) {
+  constructor (guildUser?: GuildUser) {
     if (guildUser) {
       Object.assign(this, guildUser)
     }

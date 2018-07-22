@@ -64,7 +64,7 @@ export class GuildSuggestion {
   dateCreated: Date
 
   /**
-   * The amount of likes/thumbs up the suggestion has gotten.
+   * The amount of likes/thumbs up the suggestion has received.
    *
    * @type {number}
    * @memberof GuildSuggestion
@@ -74,7 +74,7 @@ export class GuildSuggestion {
   likes: number
 
   /**
-   * The amount of dislikes/thumbs down the suggestion has gotten.
+   * The amount of dislikes/thumbs down the suggestion has received.
    *
    * @type {number}
    * @memberof GuildSuggestion

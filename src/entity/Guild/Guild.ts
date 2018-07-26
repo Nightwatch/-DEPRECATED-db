@@ -1,15 +1,17 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
 import { GuildSettings, GuildSuggestion, GuildSupportTicket, GuildUser } from '.'
-import { IsString, MaxLength, IsDate } from 'class-validator'
+import { IsString, MaxLength, IsDate, IsNotEmpty } from 'class-validator'
 
 @Entity()
 export class Guild {
   @PrimaryColumn()
   @IsString()
+  @IsNotEmpty()
   id: string
 
   @Column('varchar', { length: 100 })
   @IsString()
+  @IsNotEmpty()
   @MaxLength(100)
   name: string
 

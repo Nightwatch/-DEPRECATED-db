@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Entity, ManyToOne, Column, OneToOne, Index } from 'typeorm'
+import { PrimaryGeneratedColumn, Entity, ManyToOne, Column, OneToOne } from 'typeorm'
 import { Giveaway } from '.'
 import { IsFQDN, IsString } from 'class-validator'
 import { GiveawayItemKey } from './GiveawayItemKey'

@@ -1,4 +1,4 @@
-import { Entity, Column, OneToOne, JoinColumn, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, OneToOne, JoinColumn, Index, PrimaryGeneratedColumn } from 'typeorm'
 import { Referral } from '..'
 import { IsNumber } from 'class-validator'
 

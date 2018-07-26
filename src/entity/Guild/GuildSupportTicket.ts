@@ -1,4 +1,4 @@
-import { Entity, Column, OneToOne, JoinColumn, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { Guild } from '.'
 import { IsString, IsDate } from 'class-validator'
 

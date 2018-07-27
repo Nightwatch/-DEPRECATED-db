@@ -1,4 +1,4 @@
-import { Entity, Column, JoinColumn, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, JoinColumn, Index, ManyToOne } from 'typeorm'
 import { GuildUser, GuildUserInfraction } from '.'
 
 @Entity()

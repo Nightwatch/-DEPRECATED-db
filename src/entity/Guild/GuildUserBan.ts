@@ -4,14 +4,6 @@ import { GuildUser, GuildUserInfraction } from '.'
 @Entity()
 export class GuildUserBan extends GuildUserInfraction {
   /**
-   * The ID of the guild user ban. Auto-generated.
-   *
-   * @type {number}
-   * @memberof GuildUserBan
-   */
-  @PrimaryGeneratedColumn() id: number
-
-  /**
    * The length of the ban, e.g. `1h`, `1w`, etc.
    *
    * @type {string | null}

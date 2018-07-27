@@ -1,5 +1,5 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
-import { GuildSettings, GuildSuggestion, GuildSupportTicket, GuildUser } from '.'
+import { GuildSettings, GuildSuggestion, GuildSupportTicket, GuildUser, GuildPerk } from '.'
 import { IsString, MaxLength, IsDate, IsNotEmpty } from 'class-validator'
 
 @Entity()
@@ -74,6 +74,9 @@ export class Guild {
    */
   @OneToMany(type => GuildUser, guildUser => guildUser.guild)
   users: GuildUser[]
+
+  @OneToMany(type => GuildPerk, guildPerk => guildPerk.guild)
+  perks: GuildPerk[]
 
   constructor (guild?: Guild) {
     if (guild) {

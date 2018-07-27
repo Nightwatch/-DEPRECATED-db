@@ -10,7 +10,8 @@ import {
   UserFriend,
   UserFriendRequest,
   UserBackground,
-  UserBadge
+  UserBadge,
+  UserPerk
 } from '.'
 
 @Entity()
@@ -89,6 +90,9 @@ export class User {
     cascade: true
   })
   badges: UserBadge[]
+
+  @OneToMany(type => UserPerk, userPerk => userPerk.user)
+  perks: UserPerk[]
 
   constructor (user?: User) {
     if (user) {

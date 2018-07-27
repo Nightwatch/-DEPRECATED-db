@@ -1,11 +1,12 @@
 {
   "name": "@nightwatch/db",
-  "version": "0.12.2",
+  "version": "0.13.0",
   "description": "Database package for the Nightwatch API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint --project . --format stylish",
     "prepublish": "tsc"
   },
   "repository": {

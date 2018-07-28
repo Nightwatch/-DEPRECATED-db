@@ -9,10 +9,10 @@ The purpose of the database being its own module, is to make the parent bot more
 Feel free to suggest new entities/columns, or even create a Pull Request to add your own changes. If I like it, I may even implement it into the Nightwatch bot.
 
 ## Prerequisites
- - Node.js >= 8.9.0.
- - PostgreSQL > 9.0.
- - A Discord bot running on Discord.js.
- - (optional [for now]) Redis. Will be used in a future update.
+ - Node.js >= 8.9.0
+ - PostgreSQL > 9.0
+ - A Discord bot running on Discord.js
+ - Redis
 
 ## Installation
 ```sh

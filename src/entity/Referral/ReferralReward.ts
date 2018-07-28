@@ -1,5 +1,4 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
-import { Referral } from '..'
 import { IsString, IsNumber } from 'class-validator'
 
 @Entity()

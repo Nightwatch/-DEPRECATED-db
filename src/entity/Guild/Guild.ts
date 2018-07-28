@@ -1,6 +1,6 @@
 import { Entity, PrimaryColumn, Column, OneToOne, OneToMany } from 'typeorm'
-import { GuildSettings, GuildSuggestion, GuildSupportTicket, GuildUser } from '.'
-import { IsString, IsDate, MaxLength } from 'class-validator'
+import { GuildSettings, GuildSuggestion, GuildSupportTicket, GuildUser, GuildPerk } from '.'
+import { IsString, MaxLength, IsDate, IsNotEmpty } from 'class-validator'
 
 @Entity()
 export class Guild {
@@ -12,6 +12,7 @@ export class Guild {
    */
   @PrimaryColumn()
   @IsString()
+  @IsNotEmpty()
   id: string
 
   /**
@@ -22,6 +23,7 @@ export class Guild {
    */
   @Column('varchar', { length: 100 })
   @IsString()
+  @IsNotEmpty()
   @MaxLength(100)
   name: string
 
@@ -72,6 +74,9 @@ export class Guild {
    */
   @OneToMany(type => GuildUser, guildUser => guildUser.guild)
   users: GuildUser[]
+
+  @OneToMany(type => GuildPerk, guildPerk => guildPerk.guild)
+  perks: GuildPerk[]
 
   constructor (guild?: Guild) {
     if (guild) {

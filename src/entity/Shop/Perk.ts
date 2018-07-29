@@ -20,7 +20,8 @@ export class Perk {
   @IsNumber()
   price: number
 
-  @Column() duration: string | null
+  @Column('varchar', { nullable: true })
+  duration: string | null
 
   @ManyToOne(type => PerkType, perkType => perkType.perks)
   type: PerkType

@@ -1,8 +1,47 @@
-import { Entity, JoinColumn, Index, ManyToOne } from 'typeorm'
-import { GuildUser, GuildUserInfraction } from '.'
+import { Entity, JoinColumn, Index, ManyToOne, PrimaryGeneratedColumn, Column } from 'typeorm'
+import { GuildUser } from '.'
+import { IsDate, IsString } from 'class-validator'
 
 @Entity()
-export class GuildUserKick extends GuildUserInfraction {
+export class GuildUserKick {
+  /**
+   * The ID of the guild user kick. Auto-generated.
+   *
+   * @type {number}
+   * @memberof GuildUserKick
+   */
+  @PrimaryGeneratedColumn() id: number
+
+  /**
+   * The date the kick was issued.
+   *
+   * @type {Date}
+   * @memberof GuildUserKick
+   */
+  @Column('timestamp without time zone')
+  @IsDate()
+  timestamp: Date
+
+  /**
+   * The reason the kick was issued.
+   *
+   * @type {string}
+   * @memberof GuildUserKick
+   */
+  @Column('varchar')
+  @IsString()
+  reason: string
+
+  /**
+   * The user that issued the kick.
+   *
+   * @type {string}
+   * @memberof GuildUserKick
+   */
+  @ManyToOne(type => GuildUser)
+  @JoinColumn()
+  issuer: GuildUser
+
   /**
    * The guild user that was kicked.
    *
@@ -15,6 +54,8 @@ export class GuildUserKick extends GuildUserInfraction {
   user: GuildUser
 
   constructor (guildUserKick?: GuildUserKick) {
-    super(guildUserKick)
+    if (guildUserKick) {
+      Object.assign(this, guildUserKick)
+    }
   }
 }
